@@ -107,6 +107,8 @@ Codex の作業:
 
 受け入れ基準: itch.io のプレビューでタイトルから調査開始まで動作し、iframe内でもページスクロールが発生しない（T12 が効いていること）。
 
+追記（2026-06-12）: 相対パスビルドとZIP作成は完了。成果物は `dist-release/midnight-will-case-02-v1.0.0-itch.zip`（`index.html` がZIPルート）。`butler` は未インストールのため、itch.ioサイトへのアップロードは手動操作または `butler` 導入後に実施する。
+
 ### D7: 公開後スモークチェック（リリース毎に実施）
 
 - [ ] PC Chrome / Edge、スマホ（iOS Safari または Android Chrome）で1周（正解ルートは `docs/data-spec.md`）

@@ -8,17 +8,18 @@
 
 | 項目 | 状態 | 検証方法 |
 | --- | --- | --- |
-| シナリオデータ `data/episode-02.json` | 完成。キャラ4 / 証拠8 / 場所4 / フラグ25 | `npm.cmd run validate:episode` エラー0件・警告5件（警告は既知。`docs/data-spec.md` の「validator警告の扱い」参照） |
+| シナリオデータ `data/episode-02.json` | 完成。キャラ4 / 証拠8 / 場所4 / フラグ25 | `npm.cmd run validate:episode` エラー0件・警告0件 |
 | ゲーム実装 `src/` | 完成。調査〜最終推理〜事件解剖まで全導線実装済み | `npm.cmd run build` 成功（tsc + vite。JS約470KB / CSS約178KB） |
 | **デザインアセット**（2026-06-12 完了） | ノワール調シネマティックで全35点（背景4・証拠8・人物14・幕間CG8・タイトル1）を生成・組み込み済み。PNG原本は `assets-src/`、配信用は `public/assets/` のWebP。`assetRegistry` は WebP 参照＋ `scene.*` 9キー | `validate:episode` エラー0件 / `build` 成功 / `test:playthrough` 完走 |
 | 検証ツール | `scripts/validate-episode.mjs` と `tests/playthrough.mjs` が動作 | 本書「コマンド」参照 |
-| CI | `.github/workflows/build.yml`（main への push / PR で build） | ブランチは `main` に統一済み。リモート未設定 |
-| ドキュメント | 企画・物語・制作仕様・QA・素材・デザイン・機能ノート一式 | 本書「文書マップ」参照 |
+| CI/CD | `build.yml`（CI）＋ `deploy.yml`（GitHub Pages 自動デプロイ）。リモート: `github.com/sakurasaku1213/midnight-will-case-02`（main） | Node 24対応済み。デプロイ成功・v1.0.0 タグ済み |
+| **公開URL** | **https://sakurasaku1213.github.io/midnight-will-case-02/** （2026-06-12 公開） | 本番に対する自動プレイスルー完走（2026-06-12）、OGP画像200、一画面判定合格 |
+| ドキュメント | 企画・物語・制作仕様・QA・素材・デザイン・配布手順一式 | 本書「文書マップ」参照 |
 
 ### 未完了（残作業）
 
-1. **公開作業**: 一般配布が決定。手順は `docs/release-spec.md`（D1〜D7）。D1〜D3は完了済みのため、次は D4 GitHub Pages 公開
-2. **任意のデータ衛生**: validator警告5件は既知仕様。警告0化する場合は `docs/backlog.md` T10
+1. **任意**: itch.ioサイトへのZIPアップロード（配布物は `dist-release/midnight-will-case-02-v1.0.0-itch.zip`）
+2. **任意**: 実スマホ端末での1周確認、SNS実貼りでのOGP確認
 
 → 作業手順・受け入れ基準は `docs/backlog.md` を正とする。
 

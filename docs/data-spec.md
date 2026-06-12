@@ -158,17 +158,17 @@
 
 - ID重複、`characterId` / `evidenceId` / `addEvidence` / `evidenceAnswer` / `availableAt` の未定義参照
 - 要求されるのにどこでも set されないフラグ（**エラー**）
-- set されるのにどこからも参照されないフラグ（**警告**）
+- set されるのにどこからも参照されないフラグ（**警告**。既知仕様のフラグはホワイトリスト化）
 - `image` / `portrait` に解決された素材ファイルの実在
 
-**既知の警告5件（仕様として正常）:**
+**validatorホワイトリスト5件（仕様として正常）:**
 
 | フラグ | 警告の理由 |
 | --- | --- |
 | `analysis_time_window` / `analysis_final_chain` / `analysis_complete` | JSON内ではなく AppShell（エンジン）が参照するため validator から見えない |
 | `printer_mislead_cleared` / `pressed_visit_only` | 任意行動の記録用。現状どこからも参照しない設計 |
 
-validator が検査**できない**もの: エンジン参照フラグの綴り（リネーム時は `src/app/AppShell.tsx` も grep する）、正解ルートの到達可能性（`test:playthrough` と手動QAで担保）。
+validator が検査**できない**もの: エンジン参照フラグの綴り（リネーム時は `src/app/AppShell.tsx` も grep する）、正解ルートの到達可能性（`test:playthrough` と手動QAで担保）。上表の5件は `scripts/validate-episode.mjs` の `allowedUnusedFlags` に登録済みなので、通常の `validate:episode` は警告0件になる。
 
 ## 変更時の手順
 

@@ -45,6 +45,9 @@
 - [x] **T7 ブランチ不一致の解消（2026-06-12）**: 現ブランチは `master`、CI（`.github/workflows/build.yml`）は `main` への push / PR が対象
   - 推奨: ブランチを `main` へ統一（`git branch -m master main`）。リモート追加時は default branch も `main` にする
   - 受け入れ基準: リモートへ push した際に CI の build ジョブが実際に走ること（リモート未設定のうちはブランチ名の統一まで）
+- [x] **T20 GitHub Actions の Node 24 対応（2026-06-12）**: `build.yml` / `deploy.yml` の各アクションをNode 24対応版へ更新済み
+  - 更新: `checkout@v6` / `setup-node@v6` / `configure-pages@v6` / `upload-pages-artifact@v5` / `deploy-pages@v5`
+  - 受け入れ基準: push 時に build・deploy 両ワークフローが警告なしで成功し、公開URLが更新されること
 
 ## P3: QA完走
 
@@ -56,10 +59,9 @@
 
 ## P4: データ衛生（任意）
 
-- [ ] **T10 validator 警告5件の扱いを決める**: 現状の警告は仕様として正常（`docs/data-spec.md` の「validator 警告の扱い」参照）
-  - 案A（推奨）: `scripts/validate-episode.mjs` にエンジン参照フラグのホワイトリスト（`analysis_time_window` / `analysis_final_chain` / `analysis_complete`）と記録用フラグ（`printer_mislead_cleared` / `pressed_visit_only`）を追加し、警告0件にする
-  - 案B: 現状維持（文書で既知警告として管理）
-  - 受け入れ基準（案Aの場合）: `validate:episode` がエラー0件・警告0件になり、未知のフラグを足した時には引き続き警告が出ること
+- [x] **T10 validator 警告5件の扱い（2026-06-12）**: 案Aで対応。`scripts/validate-episode.mjs` に既知フラグのホワイトリストを追加し、警告0件化
+  - 対象: `analysis_time_window` / `analysis_final_chain` / `analysis_complete` / `printer_mislead_cleared` / `pressed_visit_only`
+  - 受け入れ基準: `validate:episode` がエラー0件・警告0件になり、未知のフラグを足した時には引き続き警告が出ること
 - [x] **T11 旧プレースホルダSVGの削除（2026-06-12）**: `public/assets/` 配下の `.svg` は全て削除済み。D1のWebP化と同時に実施した
   - 受け入れ基準: 削除後に `validate:episode` エラー0件・`build` 成功・`test:playthrough` 完走
   - 注: 配布タスク D1（アセット軽量化）の中で一緒に実施してよい
@@ -73,8 +75,13 @@
 - [x] **T15 ビルド・配布物検証（D3・2026-06-12）**: GitHub Pages baseビルド、通常preview、セーブ復帰、dist 10MB以下を確認
 - [x] **T16 GitHub Pages 公開（D4・2026-06-12）**: `sakurasaku1213/midnight-will-case-02` を作成し、GitHub Actions Pagesで公開
 - [x] **T17 v1.0.0 タグとリリース（D5・2026-06-12）**: `package.json` を `1.0.0` に更新し、`v1.0.0` タグとGitHub Releaseを作成
-- [ ] **T18 itch.io 配布（D6・任意）**
-- [ ] **T19 公開後スモークチェック（D7）**
+- [x] **T18 itch.io 配布物作成（D6・任意・2026-06-12）**: 相対パスビルドでZIP作成済み。itch.ioサイトへのアップロードはアカウント側操作
+- [x] **T19 公開後スモークチェック（D7・2026-06-12）**: 公開URLに対して実施済み
+  - 本番URL 200・OGP画像200・タイトル/開幕でアセット読み込み確認（base付きパスで解決）
+  - 本番URLに対する自動プレイスルー完走（成功エンド・不成立分岐・モバイル表示チェック込み、exit 0）
+  - 一画面判定合格（タイトル・ゲーム内とも scrollHeight = viewport）
+  - 注意: デプロイ直後はCDN伝播で画像404に見える時間帯がある（数分で解消、再現時はキャッシュバスター付きで確認）
+  - 残: スマホ実機での1周と、SNSへの実貼りでのOGP見え方確認（任意・ユーザー判断）
 
 リリースゲート: T12（一画面レイアウト）・T9（手動QA）・T6/T7（Git整備）が完了するまで T16 以降（公開）へ進まない。D1〜D3 は先行着手可。
 

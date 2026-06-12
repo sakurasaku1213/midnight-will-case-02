@@ -12,6 +12,14 @@ const episode = JSON.parse(fs.readFileSync(episodePath, "utf8"));
 const errors = [];
 const warnings = [];
 
+const allowedUnusedFlags = new Map([
+  ["analysis_time_window", "エンジンが章マップと焦点ガイドで参照する"],
+  ["analysis_final_chain", "エンジンが章マップで参照する"],
+  ["analysis_complete", "エンジンが対決解放、章マップ、整理完了表示で参照する"],
+  ["printer_mislead_cleared", "任意行動の記録用フラグ"],
+  ["pressed_visit_only", "任意のゆさぶり記録用フラグ"],
+]);
+
 // --- ID収集 ---
 const collectIds = (items, label, { requireId = true } = {}) => {
   const ids = new Set();
@@ -101,7 +109,7 @@ for (const [flag, where] of requiredFlags) {
   }
 }
 for (const flag of setFlags) {
-  if (!requiredFlags.has(flag)) {
+  if (!requiredFlags.has(flag) && !allowedUnusedFlags.has(flag)) {
     warnings.push(`フラグ "${flag}" は set されますが、どこからも参照されていません。`);
   }
 }
