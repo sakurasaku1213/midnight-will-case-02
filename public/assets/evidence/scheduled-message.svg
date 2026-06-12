@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Scheduled message placeholder">
+  <rect width="320" height="220" rx="18" fill="#eef2f3"/>
+  <rect x="98" y="34" width="124" height="154" rx="18" fill="#26343a"/>
+  <rect x="116" y="56" width="88" height="94" rx="8" fill="#ffffff"/>
+  <circle cx="160" cy="168" r="8" fill="#f0c77b"/>
+  <path d="M136 88h48M136 114h38" stroke="#8b99a1" stroke-width="8" stroke-linecap="round"/>
+  <path d="M186 58l20 20" stroke="#9b2749" stroke-width="8" stroke-linecap="round"/>
+</svg>

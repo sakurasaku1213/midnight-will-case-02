@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Document stack placeholder">
+  <rect width="320" height="220" rx="18" fill="#eef2f3"/>
+  <rect x="82" y="42" width="128" height="132" rx="8" fill="#d6dddf"/>
+  <rect x="106" y="28" width="132" height="136" rx="8" fill="#ffffff"/>
+  <path d="M132 72h78M132 100h70M132 128h50" stroke="#8b99a1" stroke-width="10" stroke-linecap="round"/>
+</svg>

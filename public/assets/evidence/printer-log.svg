@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Printer log placeholder">
+  <rect width="320" height="220" rx="18" fill="#eef2f3"/>
+  <rect x="62" y="62" width="196" height="92" rx="12" fill="#c4ced2"/>
+  <rect x="86" y="36" width="148" height="54" rx="6" fill="#ffffff"/>
+  <rect x="86" y="128" width="148" height="58" rx="6" fill="#ffffff"/>
+  <path d="M110 152h88M110 170h62" stroke="#8b99a1" stroke-width="8" stroke-linecap="round"/>
+</svg>

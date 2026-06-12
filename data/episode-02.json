@@ -1,0 +1,1024 @@
+{
+  "id": "case-02",
+  "caseNumber": "第2話",
+  "title": "消えた準備書面",
+  "subtitle": "提出前夜、削除された一文だけが事件の弱点を知っていた。",
+  "startLocationId": "conference-room",
+  "finalFlag": "final_unlocked",
+  "premise": [
+    "翌朝10時、重要な民事事件の準備書面を裁判所へ提出する予定だった。",
+    "深夜の最終確認で、旧版にあった一文が最新版から消えていることに気づく。",
+    "その一文は依頼者に有利に見えるが、証拠が薄ければ相手方の反撃材料にもなる。",
+    "誰が、なぜ、提出前夜にその一文だけを消したのか。"
+  ],
+  "openingScenes": [
+    {
+      "id": "opening-late-office",
+      "label": "開幕 22:10 法律事務所",
+      "title": "提出前夜の違和感",
+      "text": "主任弁護士の小野寺は、提出前の準備書面を読み直していた。旧版にあった依頼者に有利な一文だけが、最新版から消えている。",
+      "detail": "この事件で問われるのは、書かれた言葉ではなく、誰が何をあえて書かなかったのか。",
+      "speakerId": "lead-lawyer",
+      "tone": "investigation",
+      "assetKey": "scene.op-missing-line"
+    },
+    {
+      "id": "opening-risk",
+      "label": "開幕 22:24 事件記録",
+      "title": "強みが弱点に変わる一文",
+      "text": "消えた一文は一見すると依頼者に有利だった。しかし裏付けが薄ければ、相手方に虚偽主張と攻め込まれる危険もある。",
+      "detail": "削除が弁護士の判断なら説明がつく。依頼者の手で行われたなら、提出直前の記録改ざんになる。",
+      "speakerId": "assistant",
+      "tone": "pressure",
+      "assetKey": "scene.op-risk"
+    },
+    {
+      "id": "opening-first-move",
+      "label": "開幕 22:31 初動",
+      "title": "触れた人間を絞れ",
+      "text": "会議室の共用PC、深夜の来訪記録、送信予約の下書き。残された痕跡を順に追えば、削除した人物と理由が見えてくる。",
+      "detail": "まずは第2会議室で、旧版と最新版の差分を押さえる。",
+      "speakerId": "assistant",
+      "tone": "investigation",
+      "assetKey": "scene.op-resolve"
+    }
+  ],
+  "progressBeats": [
+    {
+      "id": "beat-draft",
+      "label": "旧版と最新版の違いを確認する",
+      "flag": "saw_old_draft"
+    },
+    {
+      "id": "beat-risk",
+      "label": "消えた一文の危険性を理解する",
+      "flag": "understood_sentence_risk"
+    },
+    {
+      "id": "beat-alibi",
+      "label": "事務員の深夜印刷を切り分ける",
+      "flag": "clerk_alibi"
+    },
+    {
+      "id": "beat-opportunity",
+      "label": "共用PCと来訪記録をつなぐ",
+      "flag": "client_route_confirmed"
+    },
+    {
+      "id": "beat-final",
+      "label": "依頼者の下書きと送信予約を押さえる",
+      "flag": "final_unlocked"
+    },
+    {
+      "id": "beat-analysis",
+      "label": "証拠同士の関係を整理する",
+      "flag": "analysis_complete"
+    },
+    {
+      "id": "beat-hearing",
+      "label": "依頼者の説明の矛盾を示す",
+      "flag": "hearing_cleared"
+    }
+  ],
+  "characters": [
+    {
+      "id": "lead-lawyer",
+      "name": "小野寺 弁護士",
+      "role": "主任弁護士",
+      "summary": "提出判断の責任者。問題の一文を入れるか、最後まで迷っていた。",
+      "portraitAssetKey": "character.lead-lawyer.neutral",
+      "portraitVariantAssetKeys": {
+        "pressure": "character.lead-lawyer.pressure",
+        "success": "character.lead-lawyer.success"
+      }
+    },
+    {
+      "id": "clerk-a",
+      "name": "真壁 事務員",
+      "role": "事務員",
+      "summary": "23時台に事務所へ戻った記録があり、最初に疑われる。",
+      "portraitAssetKey": "character.clerk-a.neutral",
+      "portraitVariantAssetKeys": {
+        "pressure": "character.clerk-a.pressure",
+        "damage": "character.clerk-a.damage"
+      }
+    },
+    {
+      "id": "client-b",
+      "name": "久世 依頼者",
+      "role": "依頼者",
+      "summary": "当初は問題の一文を入れるよう強く求めていた本人。",
+      "portraitAssetKey": "character.client-b.neutral",
+      "portraitVariantAssetKeys": {
+        "pressure": "character.client-b.pressure",
+        "damage": "character.client-b.damage",
+        "success": "character.client-b.success"
+      }
+    },
+    {
+      "id": "assistant",
+      "name": "主人公",
+      "role": "若手弁護士",
+      "summary": "提出前夜の違和感から、書面と記録の矛盾を追う。",
+      "portraitAssetKey": "character.assistant.neutral",
+      "portraitVariantAssetKeys": {
+        "pressure": "character.assistant.pressure",
+        "damage": "character.assistant.damage",
+        "success": "character.assistant.success"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "old-draft",
+      "name": "準備書面旧版",
+      "description": "旧版には『相手方担当者が追加費用を認めた』という一文が残っている。",
+      "detail": "依頼者の主張を強める表現だが、裏付けが弱いまま書けば、相手方から詳細な反論を招く。",
+      "isKey": true,
+      "assetKey": "evidence.old-draft"
+    },
+    {
+      "id": "redline-note",
+      "name": "赤入れメモ",
+      "description": "主任弁護士が問題の一文に赤丸と『提出前に再判断』と書いている。",
+      "detail": "削除指示ではなく、証拠関係を確認してから最終判断するための保留印だった。",
+      "isKey": false,
+      "assetKey": "evidence.redline-note"
+    },
+    {
+      "id": "phone-note",
+      "name": "電話聴取メモ",
+      "description": "問題の一文の根拠になった電話聴取メモ。日付と相手名が曖昧に残っている。",
+      "detail": "有利な記載に見えるが、録音やメール裏付けがなく、相手方に別争点を開かせる危険がある。",
+      "isKey": true,
+      "assetKey": "evidence.phone-note"
+    },
+    {
+      "id": "printer-log",
+      "name": "プリンタ履歴",
+      "description": "23時12分、真壁名義で印刷が実行されている。",
+      "detail": "一見すると真壁が準備書面を印刷したように見えるが、印刷ファイル名は別件の照会回答書だった。",
+      "isKey": false,
+      "assetKey": "evidence.printer-log"
+    },
+    {
+      "id": "file-history",
+      "name": "ファイル更新履歴",
+      "description": "最新版は23時47分、会議室の共用PCから保存されている。",
+      "detail": "ログイン名は主任弁護士のままだったが、共用PCは離席中もロックされていなかった。",
+      "isKey": true,
+      "assetKey": "evidence.file-history"
+    },
+    {
+      "id": "visitor-log",
+      "name": "来訪カード履歴",
+      "description": "23時39分、久世の来訪カードが受付で読み取られている。",
+      "detail": "表向きは署名済み書類の差し替えのための来訪だったが、会議室へ入れる時間はあった。",
+      "isKey": true,
+      "assetKey": "evidence.visitor-log"
+    },
+    {
+      "id": "email-draft",
+      "name": "メール下書き",
+      "description": "久世が『あの一文は削除してください』と書きかけた未送信メール。",
+      "detail": "送信されていないが、削除理由が『証拠が薄いまま出すのが怖い』という内容で残っている。",
+      "isKey": true,
+      "assetKey": "evidence.email-draft"
+    },
+    {
+      "id": "scheduled-message",
+      "name": "送信予約メモ",
+      "description": "久世のスマホに、削除後に弁護士へ説明するための送信予約が残っている。",
+      "detail": "メール下書き、来訪カード、23時47分の更新履歴を一本につなぐ最後の記録。",
+      "isKey": true,
+      "assetKey": "evidence.scheduled-message"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "timeline-print",
+      "time": "23:12",
+      "title": "真壁名義で印刷",
+      "detail": "印刷されたのは別件の照会回答書で、準備書面ではなかった。",
+      "evidenceIds": [
+        "printer-log"
+      ]
+    },
+    {
+      "id": "timeline-visit",
+      "time": "23:39",
+      "title": "久世の来訪カード",
+      "detail": "署名済み書類を置くためとして、受付から会議室前へ案内されている。",
+      "evidenceIds": [
+        "visitor-log"
+      ]
+    },
+    {
+      "id": "timeline-edit",
+      "time": "23:47",
+      "title": "共用PCで最新版保存",
+      "detail": "ログイン名は小野寺だが、会議室の共用PCはロックされていなかった。",
+      "evidenceIds": [
+        "file-history"
+      ]
+    },
+    {
+      "id": "timeline-draft",
+      "time": "23:50頃",
+      "title": "削除後の説明メモ",
+      "detail": "久世は削除後に説明するつもりで、メール下書きと送信予約を残していた。",
+      "evidenceIds": [
+        "email-draft",
+        "scheduled-message"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "conference-room",
+      "name": "第2会議室",
+      "summary": "提出前夜の最終確認場所",
+      "description": "机の上には最新版の準備書面、旧版の印刷束、赤入れメモが並んでいる。窓の外はもう終電後の暗さだ。",
+      "actions": [
+        {
+          "id": "inspect-old-draft",
+          "label": "旧版の印刷束を見る",
+          "text": "旧版には、最新版から消えた一文が残っていた。『相手方担当者が追加費用を認めた』という強い表現だ。",
+          "addEvidence": [
+            "old-draft"
+          ],
+          "setFlags": [
+            "saw_old_draft"
+          ],
+          "log": "旧版で、問題の一文を確認した。"
+        },
+        {
+          "id": "inspect-redline",
+          "label": "赤入れメモを確認する",
+          "text": "赤丸の横には『提出前に再判断』とある。削除指示ではなく、最後に証拠の厚みを確認するための印だった。",
+          "addEvidence": [
+            "redline-note"
+          ],
+          "setFlags": [
+            "saw_redline"
+          ],
+          "log": "赤入れメモは削除指示ではなかった。"
+        },
+        {
+          "id": "inspect-file-history",
+          "label": "共用PCの更新履歴を見る",
+          "text": "最新版は23時47分に保存されている。ログイン名だけなら小野寺の操作に見えるが、会議室の共用PCはロックされていなかった。",
+          "addEvidence": [
+            "file-history"
+          ],
+          "setFlags": [
+            "saw_file_history"
+          ],
+          "log": "23時47分の更新履歴を確認した。",
+          "requiresFlags": [
+            "saw_old_draft"
+          ]
+        }
+      ],
+      "assetKey": "location.conference-room"
+    },
+    {
+      "id": "records-corner",
+      "name": "記録棚",
+      "summary": "聴取メモと事件記録が残る棚",
+      "description": "薄いファイルの束に、電話聴取メモと古いメール控えが挟まっている。問題の一文の根拠を確かめられそうだ。",
+      "actions": [
+        {
+          "id": "inspect-phone-note",
+          "label": "電話聴取メモを読む",
+          "text": "聴取メモには相手方担当者の発言が短く残るだけで、録音も確認メールもない。書き方を誤ると、相手方に別争点を開かせる。",
+          "addEvidence": [
+            "phone-note"
+          ],
+          "setFlags": [
+            "saw_phone_note"
+          ],
+          "log": "電話聴取メモの裏付けが薄いことを確認した。",
+          "requiresFlags": [
+            "saw_old_draft"
+          ]
+        }
+      ],
+      "assetKey": "location.records-corner"
+    },
+    {
+      "id": "copy-room",
+      "name": "コピー室",
+      "summary": "印刷履歴が残る部屋",
+      "description": "複合機のタッチパネルには直近の印刷履歴が残っている。深夜の紙の音だけが、誰かの行動を示している。",
+      "actions": [
+        {
+          "id": "inspect-printer-log",
+          "label": "プリンタ履歴を開く",
+          "text": "23時12分に真壁名義の印刷がある。ただしファイル名は別件の照会回答書で、消えた準備書面ではなかった。",
+          "addEvidence": [
+            "printer-log"
+          ],
+          "setFlags": [
+            "saw_printer_log"
+          ],
+          "log": "真壁名義の印刷は別件だった。"
+        }
+      ],
+      "assetKey": "location.copy-room"
+    },
+    {
+      "id": "reception",
+      "name": "受付前",
+      "summary": "来訪者の痕跡が残る場所",
+      "description": "深夜の受付は暗く、カードリーダーの小さな表示だけが点いている。来客用端末には未送信の下書きも残っている。",
+      "actions": [
+        {
+          "id": "inspect-visitor-log",
+          "label": "来訪カード履歴を確認する",
+          "text": "23時39分、久世の来訪カードが読み取られている。提出前の署名済み書類を置きに来た、という理由だった。",
+          "addEvidence": [
+            "visitor-log"
+          ],
+          "setFlags": [
+            "saw_visitor_log"
+          ],
+          "log": "久世が23時39分に来訪していた。"
+        },
+        {
+          "id": "inspect-mail-draft",
+          "label": "来客用端末のメール下書きを確認する",
+          "text": "下書きには『あの一文は削除してください。証拠が薄いまま出すのが怖くなりました』とある。送信ボタンは押されていない。",
+          "addEvidence": [
+            "email-draft"
+          ],
+          "setFlags": [
+            "saw_email_draft"
+          ],
+          "log": "メール下書きから削除要請の痕跡を見つけた。",
+          "requiresFlags": [
+            "saw_file_history",
+            "saw_visitor_log"
+          ]
+        }
+      ],
+      "assetKey": "location.reception"
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-lead-lawyer-risk",
+      "characterId": "lead-lawyer",
+      "label": "消えた一文の意味を聞く",
+      "availableAt": [
+        "conference-room",
+        "records-corner"
+      ],
+      "text": "小野寺は『強い主張ほど、証拠が薄いと弱点にもなる。あの一文は入れるなら裏付けを足す必要があった』と説明した。",
+      "setFlags": [
+        "understood_sentence_risk"
+      ],
+      "log": "消えた一文には反撃材料になる危険があった。",
+      "requiresFlags": [
+        "saw_redline",
+        "saw_phone_note"
+      ]
+    },
+    {
+      "id": "talk-lead-lawyer-pc",
+      "characterId": "lead-lawyer",
+      "label": "共用PCのログイン状態を聞く",
+      "availableAt": [
+        "conference-room"
+      ],
+      "text": "小野寺は顔をしかめた。『会議室のPCは、私のアカウントのまま離席していた。短時間なら誰でも編集できた』",
+      "setFlags": [
+        "unlocked_pc_known"
+      ],
+      "log": "共用PCは小野寺のログイン状態のままだった。",
+      "requiresFlags": [
+        "saw_file_history"
+      ]
+    },
+    {
+      "id": "talk-clerk-a",
+      "characterId": "clerk-a",
+      "label": "23時台に戻った理由を聞く",
+      "availableAt": [
+        "copy-room",
+        "reception"
+      ],
+      "text": "真壁は、別件の照会回答書を印刷するために戻ったと説明した。プリンタ履歴のファイル名とも一致している。",
+      "setFlags": [
+        "clerk_alibi"
+      ],
+      "log": "真壁が戻った理由は別件印刷だった。",
+      "requiresFlags": [
+        "saw_printer_log"
+      ]
+    },
+    {
+      "id": "talk-clerk-visitor",
+      "characterId": "clerk-a",
+      "label": "深夜の来客について聞く",
+      "availableAt": [
+        "reception"
+      ],
+      "text": "真壁は『署名済みの書類を置きたいということで、久世さんを受付から会議室前まで案内しました』と話した。",
+      "setFlags": [
+        "client_route_confirmed"
+      ],
+      "log": "久世は会議室前まで案内されていた。",
+      "requiresFlags": [
+        "clerk_alibi",
+        "saw_visitor_log"
+      ]
+    },
+    {
+      "id": "talk-client-b",
+      "characterId": "client-b",
+      "label": "一文への考えを聞く",
+      "availableAt": [
+        "conference-room",
+        "reception"
+      ],
+      "text": "久世は『最初は入れてほしかった。でも、あれを書けば相手が別の話を持ち出すかもしれない』と口を濁した。",
+      "setFlags": [
+        "client_pressure"
+      ],
+      "log": "依頼者は一文の危険性を意識していた。",
+      "requiresFlags": [
+        "understood_sentence_risk"
+      ]
+    }
+  ],
+  "presentReactions": [
+    {
+      "id": "present-printer-to-clerk",
+      "characterId": "clerk-a",
+      "evidenceId": "printer-log",
+      "label": "真壁にプリンタ履歴を示す",
+      "availableAt": [
+        "copy-room",
+        "reception"
+      ],
+      "text": "真壁は履歴を見てうなずいた。『これは照会回答書です。準備書面のファイル名ではありません』",
+      "setFlags": [
+        "printer_mislead_cleared"
+      ],
+      "log": "プリンタ履歴はミスリードだと確定した。",
+      "requiresFlags": [
+        "clerk_alibi"
+      ]
+    },
+    {
+      "id": "present-old-draft-to-client",
+      "characterId": "client-b",
+      "evidenceId": "old-draft",
+      "label": "久世に旧版を示す",
+      "availableAt": [
+        "conference-room",
+        "reception"
+      ],
+      "text": "久世は旧版の一文を見て黙った。『その表現だと、相手に余計な入口を与えるかもしれない』と小さく言う。",
+      "setFlags": [
+        "client_knows_risk"
+      ],
+      "log": "久世は旧版の一文の危険性を認識していた。",
+      "requiresFlags": [
+        "client_pressure"
+      ]
+    },
+    {
+      "id": "present-visitor-to-client",
+      "characterId": "client-b",
+      "evidenceId": "visitor-log",
+      "label": "久世に来訪カード履歴を示す",
+      "availableAt": [
+        "reception"
+      ],
+      "text": "久世は『書類を置くだけのつもりでした』と言う。しかし、その時刻なら会議室の共用PCに触れることもできた。",
+      "setFlags": [
+        "client_visit_confirmed"
+      ],
+      "log": "久世の深夜来訪と共用PCの機会がつながった。",
+      "requiresFlags": [
+        "client_knows_risk",
+        "unlocked_pc_known"
+      ]
+    },
+    {
+      "id": "present-email-to-client",
+      "characterId": "client-b",
+      "evidenceId": "email-draft",
+      "label": "久世にメール下書きを示す",
+      "availableAt": [
+        "reception"
+      ],
+      "text": "久世は観念したようにスマホを差し出した。削除後に説明するつもりだった送信予約のメモには、23時47分の編集後に書いた痕跡が残っている。",
+      "addEvidence": [
+        "scheduled-message"
+      ],
+      "setFlags": [
+        "final_unlocked"
+      ],
+      "log": "メール下書きと送信予約が、削除者と理由を結びつけた。",
+      "requiresFlags": [
+        "client_visit_confirmed",
+        "client_route_confirmed",
+        "saw_email_draft"
+      ]
+    }
+  ],
+  "analysisLinks": [
+    {
+      "id": "link-sentence-risk",
+      "label": "一文の危険性",
+      "prompt": "消えた一文が、なぜ強みではなく弱点にもなり得るのか。",
+      "evidenceIds": [
+        "old-draft",
+        "phone-note"
+      ],
+      "text": "旧版の強い表現は、電話聴取メモの裏付けの薄さと結びつく。書けば有利に見えるが、反論の入口にもなる。",
+      "setFlags": [
+        "analysis_sentence_risk"
+      ],
+      "log": "旧版と電話聴取メモから、一文の危険性を整理した。",
+      "requiresFlags": [
+        "saw_old_draft",
+        "saw_phone_note"
+      ]
+    },
+    {
+      "id": "link-time-window",
+      "label": "編集できた時間帯",
+      "prompt": "誰が23時47分の編集に近い位置へいたと説明できるか。",
+      "evidenceIds": [
+        "visitor-log",
+        "file-history"
+      ],
+      "text": "23時39分の来訪カード履歴と23時47分のファイル更新履歴が、久世の機会を示す。",
+      "setFlags": [
+        "analysis_time_window"
+      ],
+      "log": "来訪カード履歴と更新履歴から、編集できた時間帯を整理した。",
+      "requiresFlags": [
+        "saw_visitor_log",
+        "saw_file_history"
+      ]
+    },
+    {
+      "id": "link-final-chain",
+      "label": "削除後の説明",
+      "prompt": "削除した本人が、あとから説明しようとしていたことを示す組み合わせはどれか。",
+      "evidenceIds": [
+        "email-draft",
+        "scheduled-message"
+      ],
+      "text": "メール下書きと送信予約メモは、削除後に説明しようとした意図を示す。これで削除者、理由、時刻が一本につながる。",
+      "setFlags": [
+        "analysis_final_chain",
+        "analysis_complete"
+      ],
+      "log": "下書きと送信予約メモから、削除後の説明意思を整理した。",
+      "requiresFlags": [
+        "final_unlocked"
+      ]
+    }
+  ],
+  "hearing": {
+    "intro": "久世の説明は一見筋が通っている。曖昧な一文を押すのではなく、時刻と記録の矛盾に証拠を当てる。",
+    "requiredFlag": "hearing_cleared",
+    "statements": [
+      {
+        "id": "statement-visit-only",
+        "speaker": "久世 依頼者",
+        "characterId": "client-b",
+        "text": "私は署名済みの書類を置いただけで、会議室には入りませんでした。",
+        "note": "来訪の目的を限定している。移動経路の記録と合うかを見る。",
+        "pressText": "久世は『受付で真壁さんに渡して、そのまま帰るつもりでした』と説明した。だが、真壁の話では会議室前まで案内している。",
+        "pressFlag": "pressed_visit_only",
+        "pressLog": "久世の来訪目的を詳しく聞いた。"
+      },
+      {
+        "id": "statement-no-edit",
+        "speaker": "久世 依頼者",
+        "characterId": "client-b",
+        "text": "準備書面のファイルは触っていません。編集できる立場でもありません。",
+        "note": "編集機会を否定している。共用PCの状態と時刻が鍵になる。",
+        "pressText": "久世は『弁護士のアカウントでなければ編集できないでしょう』と言う。つまり、問題は権限ではなく、ログイン済みの端末へ触れたかどうかだ。",
+        "pressFlag": "pressed_no_edit",
+        "pressLog": "編集できないという説明を詳しく聞いた。"
+      },
+      {
+        "id": "statement-later-fear",
+        "speaker": "久世 依頼者",
+        "characterId": "client-b",
+        "text": "あの一文が怖くなったのは、帰宅してからです。",
+        "note": "怖くなった時期をずらしている。下書きと送信予約の時刻が鍵になる。",
+        "pressText": "久世は『帰り道で考え直しただけです』と繰り返す。しかし、削除後すぐに説明する文章が残っているなら、怖くなった時期はもっと早い。",
+        "pressFlag": "pressed_later_fear",
+        "pressLog": "怖くなった時期について詳しく聞いた。"
+      }
+    ],
+    "contradictions": [
+      {
+        "statementId": "statement-no-edit",
+        "evidenceId": "file-history",
+        "text": "共用PCは小野寺のログイン状態のまま、23時47分に保存されている。編集権限そのものではなく、編集できる機会が問題だった。",
+        "setFlags": [
+          "hearing_pc_contradiction"
+        ],
+        "log": "共用PCの更新履歴で、編集機会の否定を崩した。",
+        "requiresFlags": [
+          "pressed_no_edit"
+        ]
+      },
+      {
+        "statementId": "statement-later-fear",
+        "evidenceId": "scheduled-message",
+        "text": "送信予約メモは、削除後すぐに説明するための文章だった。帰宅後に初めて怖くなった、という説明とは合わない。",
+        "setFlags": [
+          "hearing_cleared"
+        ],
+        "log": "送信予約メモで、久世の説明の時期の矛盾を示した。",
+        "requiresFlags": [
+          "hearing_pc_contradiction",
+          "pressed_later_fear"
+        ]
+      }
+    ]
+  },
+  "deduction": {
+    "intro": "争点整理と対決で固めた内容を、最後に結論として組み立てる。印刷履歴だけで決めつけず、時間と証拠の組み合わせで答える。",
+    "questions": [
+      {
+        "id": "culprit",
+        "prompt": "消えた一文を削除した人物は誰か。",
+        "stageLabel": "削除者",
+        "opponentClaim": "小野寺のアカウントで保存されている以上、削除者は弁護士本人か事務所側でしょう。",
+        "rebuttal": "来訪記録と会議室前への動線から、久世がログイン済みの共用PCへ触れられた位置にいたことを示す。",
+        "wrongHint": "削除者は名義だけでは決められない。誰がその場にいて、端末に触れられたかを見る。",
+        "answer": "client-b",
+        "evidenceAnswer": "visitor-log",
+        "choices": [
+          {
+            "id": "lead-lawyer",
+            "label": "小野寺 弁護士"
+          },
+          {
+            "id": "clerk-a",
+            "label": "真壁 事務員"
+          },
+          {
+            "id": "client-b",
+            "label": "久世 依頼者"
+          }
+        ]
+      },
+      {
+        "id": "reason",
+        "prompt": "その人物が削除した理由は何か。",
+        "stageLabel": "理由",
+        "opponentClaim": "有利な一文を依頼者が消す理由はありません。消すなら事務所のミス隠しです。",
+        "rebuttal": "旧版の強い表現は、電話聴取メモの裏付けの薄さと結びつくと反撃材料になる。",
+        "wrongHint": "有利に見える一文が、相手方から見た攻撃材料にもなる理由を確認する。",
+        "answer": "counterattack-risk",
+        "evidenceAnswer": "phone-note",
+        "choices": [
+          {
+            "id": "typo",
+            "label": "単なる誤字だと思ったため"
+          },
+          {
+            "id": "counterattack-risk",
+            "label": "裏付けが薄い一文が反撃材料になると気づいたため"
+          },
+          {
+            "id": "deadline",
+            "label": "提出期限を遅らせたかったため"
+          }
+        ]
+      },
+      {
+        "id": "opportunity",
+        "prompt": "削除する機会を説明する事情はどれか。",
+        "stageLabel": "機会",
+        "opponentClaim": "依頼者に編集権限はありません。権限がない以上、削除はできません。",
+        "rebuttal": "問題は権限ではなく、ログイン済み端末に触れられた機会である。共用PCの更新履歴がその時刻を示す。",
+        "wrongHint": "プリンタ履歴や赤入れではなく、編集された端末と保存時刻を示す記録を選ぶ。",
+        "answer": "shared-pc",
+        "evidenceAnswer": "file-history",
+        "choices": [
+          {
+            "id": "printer",
+            "label": "真壁名義のプリンタ履歴"
+          },
+          {
+            "id": "shared-pc",
+            "label": "小野寺のログイン状態で残っていた会議室の共用PC"
+          },
+          {
+            "id": "redline",
+            "label": "赤入れメモの赤丸"
+          }
+        ]
+      },
+      {
+        "id": "proof",
+        "prompt": "決定的な組み合わせはどれか。",
+        "stageLabel": "決め手",
+        "opponentClaim": "単独の記録だけでは、削除の意思までは言えません。",
+        "rebuttal": "メール下書き、来訪、更新履歴がつながり、削除後すぐ説明文を準備していた流れが見える。",
+        "wrongHint": "単独証拠ではなく、削除後の説明準備までつながる組み合わせを選ぶ。",
+        "answer": "email-history-visitor",
+        "evidenceAnswer": "scheduled-message",
+        "choices": [
+          {
+            "id": "printer-only",
+            "label": "プリンタ履歴だけ"
+          },
+          {
+            "id": "redline-only",
+            "label": "赤入れメモだけ"
+          },
+          {
+            "id": "email-history-visitor",
+            "label": "メール下書き、来訪カード履歴、ファイル更新履歴"
+          }
+        ]
+      }
+    ]
+  },
+  "caseBoard": {
+    "title": "論点ボード",
+    "subtitle": "証拠を結論の役割へ置き直す",
+    "summary": "事件ファイルで集めた記録を、削除者、理由、機会、決め手の4つへ整理する。すべての論点が証拠で埋まると、最終推理の答え方が見える。",
+    "issues": [
+      {
+        "id": "board-culprit",
+        "label": "誰",
+        "title": "削除者",
+        "question": "消えた一文を削除した人物は誰か。",
+        "answer": "来訪カード履歴と更新履歴を合わせると、久世が共用PCへ触れられる位置にいた。",
+        "evidenceIds": [
+          "visitor-log",
+          "file-history"
+        ],
+        "requiresFlags": [
+          "saw_visitor_log",
+          "saw_file_history"
+        ],
+        "nextAction": "来訪カード履歴とファイル更新履歴をそろえる。"
+      },
+      {
+        "id": "board-motive",
+        "label": "理由",
+        "title": "削除した理由",
+        "question": "なぜ有利に見える一文を消したのか。",
+        "answer": "旧版の強い一文は、電話聴取メモの裏付けの薄さと結びつくと反撃材料になる。",
+        "evidenceIds": [
+          "old-draft",
+          "phone-note"
+        ],
+        "requiresFlags": [
+          "analysis_sentence_risk"
+        ],
+        "nextAction": "旧版と電話聴取メモを争点整理で結びつける。"
+      },
+      {
+        "id": "board-opportunity",
+        "label": "機会",
+        "title": "編集できた条件",
+        "question": "久世はどうやって準備書面に触れたのか。",
+        "answer": "共用PCは小野寺のログイン状態のまま保存されており、権限ではなく端末への接触が鍵だった。",
+        "evidenceIds": [
+          "visitor-log",
+          "file-history"
+        ],
+        "requiresFlags": [
+          "hearing_pc_contradiction"
+        ],
+        "nextAction": "対決で、編集できないという説明を更新履歴で崩す。"
+      },
+      {
+        "id": "board-proof",
+        "label": "決め手",
+        "title": "削除後の説明",
+        "question": "削除した本人があとから説明しようとしていたことを示す記録は何か。",
+        "answer": "メール下書きと送信予約メモが、削除後すぐ説明文を用意していたことを示す。",
+        "evidenceIds": [
+          "email-draft",
+          "scheduled-message"
+        ],
+        "requiresFlags": [
+          "hearing_cleared"
+        ],
+        "nextAction": "メール下書きと送信予約メモをそろえ、対決で時期の矛盾を示す。"
+      }
+    ]
+  },
+  "caseReview": {
+    "title": "事件解剖",
+    "subtitle": "提出前夜に何が起きたかを、証拠の役割ごとに読み返す",
+    "summary": "この事件の核心は、消えた一文そのものではなく、その一文を誰が、どの時点で、どんな理由で消したかにある。単独の履歴では足りず、動機、機会、結果を別々の証拠でつなぐ必要があった。",
+    "conclusions": [
+      {
+        "id": "review-culprit",
+        "label": "削除者",
+        "title": "久世 依頼者",
+        "text": "来訪カード履歴とファイル更新履歴から、久世が提出前夜に共用PCへ触れられる位置にいたことが分かる。",
+        "evidenceIds": [
+          "visitor-log",
+          "file-history"
+        ]
+      },
+      {
+        "id": "review-motive",
+        "label": "理由",
+        "title": "反撃材料になる一文を恐れた",
+        "text": "旧版と電話聴取メモを合わせると、一文は有利に見える一方で裏付けが薄い。久世はその危うさを知っていた。",
+        "evidenceIds": [
+          "old-draft",
+          "phone-note"
+        ]
+      },
+      {
+        "id": "review-proof",
+        "label": "決め手",
+        "title": "下書き、来訪、更新履歴の三点",
+        "text": "メール下書きは削除後の説明意思、来訪カードは機会、更新履歴は結果を示す。三つがそろって初めて結論が成立する。",
+        "evidenceIds": [
+          "email-draft",
+          "visitor-log",
+          "file-history"
+        ]
+      }
+    ],
+    "evidenceChain": [
+      {
+        "id": "chain-risk",
+        "label": "危険性",
+        "title": "消えた一文は強みだけではなかった",
+        "text": "旧版の記載は依頼者に有利に見えるが、電話聴取メモの裏付けが薄いため、相手方に虚偽や誇張として攻められる危険があった。",
+        "evidenceIds": [
+          "old-draft",
+          "phone-note"
+        ]
+      },
+      {
+        "id": "chain-opportunity",
+        "label": "機会",
+        "title": "共用PCはログイン状態のままだった",
+        "text": "久世の来訪時刻と23時47分の更新履歴が重なる。編集権限よりも、ログイン済み端末へ触れられたことが問題だった。",
+        "evidenceIds": [
+          "visitor-log",
+          "file-history"
+        ]
+      },
+      {
+        "id": "chain-explanation",
+        "label": "事後説明",
+        "title": "削除後すぐ説明文が用意されていた",
+        "text": "メール下書きと送信予約メモは、帰宅後に初めて怖くなったという説明と合わない。削除時点で説明の筋が準備されていた。",
+        "evidenceIds": [
+          "email-draft",
+          "scheduled-message"
+        ]
+      }
+    ],
+    "practiceNotes": [
+      {
+        "id": "practice-record",
+        "label": "提出判断",
+        "title": "書く理由と書かない理由を記録に残す",
+        "text": "不利な事実をどう扱うかは戦略判断になり得る。ただし、誰が判断したかを曖昧にすると、書面そのものの信用が揺らぐ。"
+      },
+      {
+        "id": "practice-client",
+        "label": "依頼者対応",
+        "title": "依頼者の不安を放置しない",
+        "text": "弱い一文を消したくなる心理は理解できる。だからこそ、証拠の強弱と提出方針を事前に説明し、勝手な編集を防ぐ必要がある。"
+      },
+      {
+        "id": "practice-system",
+        "label": "事務所管理",
+        "title": "共用PCのログイン状態を管理する",
+        "text": "ログイン名だけでは実際の操作者を決められない。端末、来訪、保存時刻を分けて残す運用が必要になる。"
+      }
+    ]
+  },
+  "productionMaterials": {
+    "title": "制作資料",
+    "subtitle": "Case 02を読み終えたプレイヤー向けの脚本メモ",
+    "summary": "この資料は、真相を知った後に事件の作り方を振り返るための記録である。法律実務の緊張を、短編ミステリーの遊びとして成立させるために、証拠の役割と誤誘導の位置を整理している。",
+    "notes": [
+      {
+        "id": "materials-theme",
+        "label": "テーマ",
+        "title": "書くことと書かないこと",
+        "text": "Case 02の中心は、消えた一文を探すことではなく、その一文を消す判断が誰のものだったかを確定することにある。",
+        "detail": "弁護士の戦略判断として書かないのか、依頼者が不利な事実を隠そうとして消したのかで、同じ削除でも意味が変わる。"
+      },
+      {
+        "id": "materials-misdirect",
+        "label": "誤誘導",
+        "title": "プリンタ履歴は犯人当ての答えではない",
+        "text": "真壁の深夜印刷は、最初に疑う理由として置いた。だが印刷履歴は編集行為そのものを示さない。",
+        "detail": "プレイヤーが履歴の種類を分けて読むことで、印刷、来訪、保存、下書きがそれぞれ別の意味を持つことに気づく構成にしている。"
+      },
+      {
+        "id": "materials-cross",
+        "label": "対決",
+        "title": "発言は二段階で崩れる",
+        "text": "久世の説明は、編集機会の否定と、怖くなった時期の説明に分かれる。片方だけ崩しても真相には届かない。",
+        "detail": "共用PCの更新履歴で機会を崩し、送信予約メモで事後説明の時期を崩すことで、証拠を順に当てる手触りを作っている。"
+      },
+      {
+        "id": "materials-legal",
+        "label": "実務",
+        "title": "記録化されない判断ほど危うい",
+        "text": "提出書面の一文は、書くことにも書かないことにも理由がいる。誰の判断だったかが残らないと、事件全体の信用が揺らぐ。",
+        "detail": "法律用語で解決する話ではなく、記録の読み方と依頼者対応の怖さをゲームの結論に戻している。"
+      },
+      {
+        "id": "materials-assets",
+        "label": "素材",
+        "title": "専用画像はあとから差し替える",
+        "text": "現段階では仮SVGを使い、人物、場所、証拠、終幕の構図だけを固定している。",
+        "detail": "高品質画像を差し込む時は、提出前夜、記録棚、共用PC、メール下書き、終幕の提出判断を優先する。"
+      },
+      {
+        "id": "materials-next",
+        "label": "次回",
+        "title": "次の事件は判断の履歴をめぐる",
+        "text": "Case 02で扱ったのは、書面から消えた一文だった。次に広げるなら、相談記録、修正履歴、提出後の説明責任が軸になる。",
+        "detail": "物理的な証拠よりも、誰がいつ何を理解していたかを追うシリーズとして伸ばせる。"
+      }
+    ]
+  },
+  "endings": {
+    "success": {
+      "title": "書かないことの責任",
+      "text": "主人公は久世に告げる。不利な事実を消せば、事件が強くなるわけではない。何を書くかだけでなく、誰が、どの判断で、何を書かないことにしたのか。それが提出前夜の真相だった。",
+      "scenes": [
+        {
+          "id": "ending-truth",
+          "label": "終幕 00:18 真相",
+          "title": "削除したのは依頼者だった",
+          "text": "メール下書き、来訪カード、ファイル更新履歴。三つの記録は、久世が提出前夜に共用PCへ触れたことを一本の線にした。",
+          "detail": "プリンタ履歴だけでは人を決められない。だが来訪、下書き、更新時刻がそろえば、偶然では片づかない。",
+          "speakerId": "assistant",
+          "tone": "success",
+          "assetKey": "scene.ed-truth"
+        },
+        {
+          "id": "ending-motive",
+          "label": "終幕 00:24 理由",
+          "title": "怖くなった一文",
+          "text": "久世は、あの一文が勝ち筋ではなく反撃材料にもなると知っていた。だから削った。けれど、記録を黙って変えることは別の危険を生む。",
+          "detail": "事件の強さは、都合の悪い事実を隠すことではなく、弱い根拠を弱いまま説明できることにある。",
+          "speakerId": "client-b",
+          "tone": "pressure",
+          "assetKey": "evidence.scheduled-message"
+        },
+        {
+          "id": "ending-filing",
+          "label": "終幕 00:37 提出判断",
+          "title": "書かないことにも責任が残る",
+          "text": "小野寺は最新版を差し戻し、消えた一文の扱いを記録に残す。提出する書面は、書く理由と書かない理由の両方に耐えなければならない。",
+          "detail": "夜明け前、事件は提出へ進む。だが次に問われるのは、依頼者をどう説得し、どこまで裁判所へ説明するかだ。",
+          "speakerId": "lead-lawyer",
+          "tone": "success",
+          "assetKey": "scene.ed-judgment"
+        }
+      ]
+    },
+    "failure": {
+      "title": "推理不成立",
+      "text": "証拠のつながりが足りない。プリンタ履歴はミスリードであり、削除者と理由を示すには、メール下書き、来訪カード履歴、ファイル更新履歴を組み合わせる必要がある。",
+      "scenes": [
+        {
+          "id": "failure-gap",
+          "label": "不成立 争点の欠落",
+          "title": "単独の記録では届かない",
+          "text": "プリンタ履歴だけを追うと、真壁が疑わしく見える。だが印刷と編集は別の行為であり、それだけでは削除者も理由も説明できない。",
+          "detail": "誰が触れたか、なぜ触れたか、触れた結果がどこに残ったかを分けて読み直す。",
+          "speakerId": "assistant",
+          "tone": "damage",
+          "assetKey": "scene.ed-fail-records"
+        },
+        {
+          "id": "failure-review",
+          "label": "不成立 再検討",
+          "title": "下書き、来訪、更新履歴へ戻る",
+          "text": "メール下書きは理由を示し、来訪カードは機会を示し、ファイル更新履歴は結果を示す。三つをつなぐまで結論は出せない。",
+          "detail": "事件ファイルを開き、時系列に沿って証拠の役割を確認する。",
+          "speakerId": "assistant",
+          "tone": "pressure",
+          "assetKey": "scene.ed-fail-morning"
+        }
+      ]
+    }
+  }
+}

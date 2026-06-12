@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Conference room at night">
+  <rect width="900" height="560" fill="#e9eef0"/>
+  <rect x="0" y="0" width="900" height="210" fill="#273139"/>
+  <rect x="84" y="46" width="210" height="128" rx="6" fill="#1a2228"/>
+  <rect x="116" y="74" width="146" height="72" fill="#54757a"/>
+  <rect x="616" y="46" width="210" height="128" rx="6" fill="#1a2228"/>
+  <rect x="648" y="74" width="146" height="72" fill="#54757a"/>
+  <rect x="0" y="210" width="900" height="350" fill="#f7f4ec"/>
+  <path d="M110 372h680l62 128H48z" fill="#7b4f35"/>
+  <path d="M156 360h588l46 92H110z" fill="#9f7351"/>
+  <rect x="236" y="278" width="180" height="116" rx="4" fill="#fdfdfb" transform="rotate(-4 326 336)"/>
+  <rect x="466" y="286" width="166" height="108" rx="4" fill="#fdfdfb" transform="rotate(5 549 340)"/>
+  <path d="M262 312h120M258 336h112M256 360h92" stroke="#8b99a1" stroke-width="8" stroke-linecap="round"/>
+  <path d="M496 316h96M500 340h114M504 364h84" stroke="#8b99a1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="612" cy="302" r="24" fill="#9b2749"/>
+  <path d="M607 292l15 11-17 17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="398" y="244" width="94" height="70" rx="6" fill="#26343a"/>
+  <rect x="414" y="258" width="62" height="38" rx="3" fill="#92b7b2"/>
+  <rect x="432" y="315" width="26" height="46" fill="#26343a"/>
+</svg>

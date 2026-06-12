@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 360" role="img" aria-label="Lead lawyer placeholder">
+  <rect width="320" height="360" rx="24" fill="#eef2f3"/>
+  <circle cx="160" cy="108" r="54" fill="#d9bca3"/>
+  <path d="M92 320c12-78 44-118 68-118s56 40 68 118z" fill="#26343a"/>
+  <path d="M116 106c8-54 80-64 96-10-24-12-54-12-96 10z" fill="#1d252c"/>
+  <path d="M128 206l32 42 32-42" fill="#f7f4ec"/>
+  <path d="M146 246h28l-8 58h-12z" fill="#9b2749"/>
+</svg>

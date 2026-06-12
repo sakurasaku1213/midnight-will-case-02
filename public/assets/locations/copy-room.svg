@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Copy room">
+  <rect width="900" height="560" fill="#edf2f4"/>
+  <rect x="0" y="0" width="900" height="170" fill="#2f3b42"/>
+  <rect x="102" y="120" width="696" height="310" rx="12" fill="#dde4e6"/>
+  <rect x="142" y="154" width="616" height="74" rx="8" fill="#f7f9f9"/>
+  <rect x="164" y="174" width="196" height="34" rx="4" fill="#6e8f95"/>
+  <circle cx="696" cy="192" r="14" fill="#9b2749"/>
+  <circle cx="652" cy="192" r="14" fill="#0f766e"/>
+  <rect x="160" y="252" width="580" height="96" rx="8" fill="#c4ced2"/>
+  <rect x="204" y="278" width="186" height="42" rx="4" fill="#ffffff"/>
+  <rect x="410" y="278" width="286" height="42" rx="4" fill="#ffffff"/>
+  <rect x="170" y="354" width="560" height="118" rx="8" fill="#aebbc0"/>
+  <path d="M246 384h408l34 70H212z" fill="#fdfdfb"/>
+  <path d="M286 404h286M286 428h220" stroke="#87949b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M116 450h668l54 82H62z" fill="#d6dee1"/>
+</svg>

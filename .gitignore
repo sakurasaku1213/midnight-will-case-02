@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vite/
+.playwright-mcp/
+.codex/*.log
+.codex/screenshots/
+coverage/
+*.log
+*.tmp
+.env
+.env.local
+*.zip

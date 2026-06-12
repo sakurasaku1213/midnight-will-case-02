@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Reception at night">
+  <rect width="900" height="560" fill="#eef2f3"/>
+  <rect x="0" y="0" width="900" height="190" fill="#26343a"/>
+  <rect x="84" y="86" width="230" height="286" rx="8" fill="#334247"/>
+  <rect x="124" y="126" width="150" height="196" rx="5" fill="#182126"/>
+  <rect x="626" y="104" width="148" height="248" rx="8" fill="#5e4a3a"/>
+  <rect x="650" y="128" width="100" height="64" rx="5" fill="#89aea9"/>
+  <rect x="660" y="214" width="80" height="104" rx="5" fill="#f7f4ec"/>
+  <rect x="154" y="404" width="592" height="92" rx="10" fill="#855b3f"/>
+  <rect x="202" y="380" width="206" height="86" rx="8" fill="#f8faf9"/>
+  <path d="M230 410h148M230 436h116" stroke="#86949b" stroke-width="8" stroke-linecap="round"/>
+  <rect x="502" y="348" width="92" height="126" rx="12" fill="#1e292f"/>
+  <rect x="520" y="370" width="56" height="70" rx="5" fill="#6fa5a0"/>
+  <circle cx="548" cy="456" r="9" fill="#f0c77b"/>
+  <path d="M702 214h18v104h-18z" fill="#9b2749"/>
+  <path d="M670 244h38M670 270h38M670 296h38" stroke="#b9c5c9" stroke-width="6" stroke-linecap="round"/>
+</svg>

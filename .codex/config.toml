@@ -1,0 +1,9 @@
+[project]
+name = "midnight-will-case-02"
+root_marker = ".codex-root"
+
+[commands]
+install = "npm.cmd install"
+dev = "npm.cmd run dev"
+build = "npm.cmd run build"
+preview = "npm.cmd run preview"

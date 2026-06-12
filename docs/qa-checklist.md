@@ -1,0 +1,170 @@
+# QAチェックリスト
+
+## ゲーム進行
+
+- [x] 初回起動でタイトル画面が表示され、「はじめから」で開幕第1幕へ進める
+- [x] セーブがある状態でリロードするとタイトル画面に「つづきから」が表示され、保存時点の画面へ戻れる
+- [x] セーブがない状態ではタイトル画面に「つづきから」が表示されない
+- [x] タイトル画面の「設定」で効果音オン/オフ、音量、演出テンポを変更でき、既存の音響保存キーで保持される
+- [x] 開幕が複数幕で表示され、次の幕へ進める
+- [x] 開幕の途中または最後から調査開始できる
+- [x] コマンドボタンで現在/実行可/前提待ちの状態を確認でき、証拠1点では `整理する` がまだ押せない
+- [x] 4つの場所へ移動できる
+- [x] 移動画面で現在地、調査可、前提待ち、確認済みと、場所ごとの未確認数・証拠数を確認できる
+- [x] 調査画面で現場画像上の調査ポイントを押して証拠取得やフラグ更新ができる
+- [x] 調査画面の現場メモで、次に調べる項目、調査可/確認済み/前提待ち数、取得済み証拠を確認できる
+- [x] 証拠取得時に入手パネルが表示され、事件ファイルへ移動できる
+- [x] 旧版、電話聴取メモ、プリンタ履歴、更新履歴、来訪カード履歴、メール下書きを取得できる
+- [x] 会話画面で人物ごとの供述カードと聞ける話題数を確認できる
+- [x] 会話後に供述メモ更新が表示され、次に聞ける話題と証拠で詰める候補を確認できる
+- [x] 人物と証拠を選ぶ証拠提示で `final_unlocked` が立つ
+- [x] 証拠提示前に相手の言い分、証拠の読み方、突きつける問いが表示される
+- [x] 証拠提示前に詰め筋あり/組み合わせが弱いの状態差を確認できる
+- [x] 証拠提示成功後に、発言、証拠、認めた点、次の一手の反応分析が表示される
+- [x] 誤った証拠提示で信用ゲージが下がる
+- [x] 「現在の焦点」から相談メモを開け、段階ヒントを追加表示できる
+- [x] 「現在の焦点」の次の一手カードで推奨コマンドと相談メモの両方へ移れる
+- [x] 相談メモの関連証拠チップから事件ファイルの該当証拠詳細へ移動できる
+- [x] 事件ファイルの論点タブで、削除者、理由、機会、決め手の成立状況を確認できる
+- [x] 争点整理で3つの証拠組み合わせを正しく整理できる
+- [x] 対決で発言を詳しく聞いてから、2つの矛盾を順番に示せる
+- [x] 対決で証言を前後に送り、証言マーカーから任意の発言へ戻れる
+- [x] 対決で左右キーによる証言送りができ、証拠セレクトにフォーカス中は誤作動しない
+- [x] 対決で証言状態が「要ゆさぶり」「提示可能」「突破済み」へ変化する
+- [x] 対決で証言読み筋に発言の芯、読む記録、次の操作が表示され、証拠詳細を開ける
+- [x] 対決の崩し順メモで、2段階の矛盾の前提待ち/指摘可能/突破済みを確認でき、カードから証言へ戻れる
+- [x] 対決進行カードで、現在の証言、読むべき記録、選択中証拠の噛み合わせが表示される
+- [x] 対決支援に、選択中の発言、示す証拠、関連時系列が表示される
+- [x] 対決支援の提出前チェックで、成立する証拠は「提出可」、外れた証拠は「照合外」として確認できる
+- [x] 対決で詳しく聞くと、押した発言、引き出した反応、次の一手、次に当てる証拠候補が一時パネルに表示される
+- [x] 対決で詳しく聞いた後、証言更新パネルに元の発言、追及後の補足、次に当てる記録が残る
+- [x] 対決で誤った証拠を提示すると、読み直す候補記録が表示され、その証拠詳細をクイック表示できる
+- [x] 対決で誤った証拠を示すと、弱い理由、見直し先、ダメージ表情が表示される
+- [x] 証拠提示成功、争点整理成功、対決での矛盾成立時に記録照合演出が表示される
+- [x] 会話、証拠提示、対決、記録照合で `tone` に応じた人物表情差分が表示される
+- [x] 正しい証拠提示や争点整理の直後に「異議あり」「突破」のインパクト演出が表示される
+- [x] 誤った整理や対決で信用ゲージが下がる
+- [x] 成功、追及、信用低下、推理成立/不成立でカットインが表示される
+- [x] 効果音のオン/オフ、音量、演出テンポを変更でき、リロード後も保持される
+- [x] SOUNDTRACKパネルで現在の音響レイヤー、BPM、次のスティング、テンションメーター、試聴ボタンを確認できる
+- [x] 証拠取得通知は一定時間で消え、終幕に残らない
+- [x] 誤答を重ねると信用切れで推理不成立になる
+- [x] 最終推理で論点ごとの反論ステージが表示され、結論と根拠証拠を固めると次の論点へ進める
+- [x] 最終推理で左右キー、Home、Endによる論点移動ができ、結論セレクトにフォーカス中は誤作動しない
+- [x] 最終推理の反論照合で、選択中の結論/証拠が反論に届くか、組み合わせを見直すべきかを確認できる
+- [x] 最終推理で反論設計メモが表示され、4論点の結論、根拠証拠、未完成/再検討状態を確認できる
+- [x] 最終推理で4論点が揃うと、裁判長に提出する最終弁論サマリーが表示される
+- [x] 最終推理の反論ステージで誤答すると再検討メモが表示され、弱い組み合わせと読み直す記録から根拠証拠クイック表示へ戻れる
+- [x] 最終推理4問で結論と根拠証拠をそろえて正解すると複数幕の成功エンドになる
+- [x] 成功エンドと推理不成立エンドで幕送りできる
+- [x] 成功エンド後に事件解剖が解放され、真相と証拠の鎖を読み返せる
+- [x] 事件解剖から制作資料へ進める
+- [x] 制作資料から事件解剖や事件ファイルへ戻れる
+- [x] 制作資料で `FINISH AUDIT`、`RELEASE GATE`、`ASSET KEY MANIFEST` を確認し、コード側の完成項目と外部素材待ち項目を分けて読める
+- [x] 推理不成立エンドでは事件解剖が解放されない
+- [x] 最終推理の不正解時は設問別レビューが出て、信用が下がり、再挑戦できる
+- [x] 最終推理の根拠証拠を誤ると、その設問は再検討になる
+- [x] 最終推理の再挑戦後に正答へ直すと成功エンドになる
+- [x] コマンド欄の再開メモで最新行動、自動保存状態、関連証拠を確認でき、ログ画面へ移動できる
+- [x] コマンド欄の章マップで調査、提示、整理、対決、推理、終幕の解放状態と戻り先を確認できる
+- [x] ログ画面で会話、調査、対決、推理の詳細履歴を読み返せる
+- [x] 最初からやり直せる
+
+## 表示
+
+- [x] タイトル画面がデスクトップとスマホで題字・ボタン・設定UIをはみ出さずに表示できる
+- [x] デスクトップとスマホの全モードでページ自体はスクロールせず、スクロールは作業面・手控えタブ・ボトムシートなど指定された内部領域だけに限定される
+- [x] タイトル画像が読めない場合も、ノワール調のフォールバック背景で成立する
+- [x] トップバー、コマンド、本文、カード、タブ、ログ、カットインがノワール調トークンで表示され、新規HEX直書きを増やしていない
+- [x] デスクトップ幅でコマンドと本文が重ならない
+- [x] コマンドの状態チップと短い理由がデスクトップとスマホで横にはみ出さない
+- [x] スマホ幅でボタン内テキストがはみ出さない
+- [x] 調査ポイントがデスクトップではラベル付き、スマホでは番号中心で表示され、横スクロールを出さない
+- [x] 現場メモの統計、次に触れる場所、証拠チップがスマホ幅で縦積みになり横スクロールを出さない
+- [x] 争点整理のセレクトUIがスマホ幅で縦積みになる
+- [x] 証拠提示の人物/証拠セレクトとプレビューがスマホ幅で縦積みになる
+- [x] 証拠提示前の圧力ボードがスマホ幅で縦積みになり、横スクロールを出さない
+- [x] 証拠提示成功後の反応分析がスマホ幅で縦積みになり、横スクロールを出さない
+- [x] 会話画面の人物カードと話題ボタンがスマホ幅で横スクロールを出さない
+- [x] 会話後の追及メモがスマホ幅で縦積みになり、操作ボタンが横にはみ出さない
+- [x] 相談メモのヒント、関連証拠、操作ボタンがスマホ幅で横スクロールを出さない
+- [x] 対決パートの発言カードと信用ゲージが重ならない
+- [x] 対決パートの尋問タイトル幕で証言番号、証人、突破状況が読める
+- [x] 対決パートの法廷HUDで信用、選択中証拠、ゆさぶり/つきつける状態がデスクトップとスマホで読める
+- [x] 対決パートで左右キー、P、Enterの操作ヒントが表示され、キーボードでゆさぶりと提示ができる
+- [x] 証言送りボードの前後ボタン、証言カード、証言マーカーがスマホ幅で横スクロールを出さない
+- [x] 対決パートの法廷記録トレイから証拠カードを直接選択でき、選択状態と候補状態が読める
+- [x] 証言読み筋の3項目と証拠ボタンがスマホ幅で縦積みになり横スクロールを出さない
+- [x] 対決進行カードがデスクトップで3列、スマホ幅で縦積みになり横スクロールを出さない
+- [x] 対決支援がデスクトップで3列、スマホ幅で縦積みになり横スクロールを出さない
+- [x] 提出前チェックの4項目がデスクトップとスマホで横にはみ出さず、状態ラベルと次の操作が読める
+- [x] 証言更新パネルの3項目と証拠ボタンがデスクトップとスマホで横にはみ出さない
+- [x] 崩し順メモのステータスカードと証拠チップがスマホ幅で縦積みになり横スクロールを出さない
+- [x] ゆさぶり後の証拠候補チップがスマホ幅で折り返され、横スクロールを出さない
+- [x] 誤った証拠提示時に裁判長ペナルティ、失点、戻る記録がデスクトップとスマホで読める
+- [x] 記録照合演出の発言、照合結果、証拠チップがデスクトップとスマホで横にはみ出さない
+- [x] 人物表情差分がデスクトップとスマホで枠からはみ出さず、本文や証拠チップを押しつぶさない
+- [x] 事件ファイルの証拠、人物、時系列、証言、論点タブがデスクトップとスマホで横にはみ出さない
+- [x] 事件ファイルの証拠詳細欄に、関連時刻、使用する争点、提示・対決・最終推理で使う場面が表示される
+- [x] 事件ファイルの証拠詳細欄に証言録リンクが表示され、その証拠で崩す発言と証言録へ戻る導線を確認できる
+- [x] 事件ファイルの照合ノートで、取得済み証拠2点の共通する争点や論点が表示される
+- [x] 事件ファイルの記録相関図で、選択中証拠の時刻、争点、対決、最終推理、関連証拠が表示される
+- [x] 事件ファイルの時系列解析で、各時刻の証拠チップと崩す主張/使う場面が表示される
+- [x] 事件ファイルの証言録で、元の発言、追及後の補足、当てる記録、提示可能/前提待ち/突破済み状態が表示される
+- [x] 論点ボードの4カードと証拠チップがデスクトップとスマホで横にはみ出さない
+- [x] 最終推理の反論照合3カードがスマホ幅で縦積みになり、横スクロールを出さない
+- [x] 最終推理の反論設計メモ、再検討メモ、根拠証拠セレクト、証拠プレビュー、成立/再検討表示がデスクトップとスマホで横にはみ出さない
+- [x] 詳細ログカード、集計、絞り込みボタンがデスクトップとスマホで横にはみ出さない
+- [x] 再開メモの本文、証拠チップ、ログボタンがデスクトップとスマホで横にはみ出さない
+- [x] カットインがデスクトップとスマホで本文やボタンを恒久的に覆わない
+- [x] 音響設定UI、演出テンポ切替、SOUNDTRACKパネルがデスクトップとスマホでヘッダーやサイドバーからはみ出さない
+- [x] 開幕/終幕の幕リストと操作ボタンがデスクトップとスマホで横にはみ出さない
+- [x] 事件解剖の結論カードと証拠チップがデスクトップとスマホで横にはみ出さない
+- [x] 制作資料のロードマップ、仕上げ評価、リリースゲート、素材差し替え計画、assetKey manifest、カードがデスクトップとスマホで横にはみ出さない
+- [x] 証拠カードとログが増えても操作不能にならない
+
+## 技術
+
+- [x] `npm.cmd run build`
+- [x] `npm.cmd run validate:episode`
+- [x] `npm.cmd run test:playthrough`
+- [x] `desktop-title.png` と `mobile-title.png` でタイトル画面、つづきから表示、設定UIの保持を確認する
+- [x] `desktop-opening-risk.png` と `desktop-opening-first-move.png` で開幕の幕送りを確認する
+- [x] `desktop-ending-final.png` と `mobile-ending-final.png` で終幕の幕送りを確認する
+- [x] `desktop-case-review.png` と `mobile-case-review.png` で事件解剖を確認する
+- [x] `desktop-production-materials.png`、`mobile-production-materials.png`、`desktop-finish-audit.png`、`mobile-finish-audit.png`、`desktop-release-gate.png`、`mobile-release-gate.png`、`desktop-asset-swap-plan.png`、`mobile-asset-swap-plan.png` で制作資料、仕上げ評価、出荷前ゲート、素材差し替え計画を確認する
+- [x] `desktop-audio-settings.png`、`desktop-soundtrack-hearing.png` で音響設定、演出テンポ、SOUNDTRACKパネルを確認する
+- [x] `desktop-command-guidance.png` と `mobile-command-guidance.png` でコマンド状態表示を確認する
+- [x] `desktop-case-map.png` と `mobile-case-map.png` で章マップとロック/完了状態を確認する
+- [x] `desktop-move-routes.png` と `mobile-move-routes.png` で場所移動カードの進捗表示を確認する
+- [x] `desktop-focus-next-action.png` と `mobile-focus-next-action.png` でサイドバーの次の一手カードと相談メモ導線を確認する
+- [x] `desktop-investigation-hotspots.png`、`desktop-investigation-memo-progress.png`、`desktop-evidence-found.png`、`desktop-evidence-found-casefile.png`、`mobile-investigation-hotspots.png`、`mobile-evidence-found.png` で調査ポイントUI、現場メモ、証拠入手パネルを確認する
+- [x] `desktop-talk-dossier.png`、`desktop-talk-dossier-result.png`、`mobile-talk-dossier.png`、`mobile-talk-followup.png` で人物別の供述カード、話題ボタン、会話後の追及メモを確認する
+- [x] `desktop-casefile-theory.png` と `mobile-casefile-theory-focused.png` で論点ボードを確認する
+- [x] `desktop-consult.png`、`desktop-consult-evidence-jump.png`、`mobile-consult.png`、`mobile-consult-evidence-jump.png` で相談メモの段階開示、関連証拠ジャンプ、レスポンシブ表示を確認する
+- [x] `desktop-present.png`、`mobile-present.png`、`desktop-present-breakdown.png`、`mobile-present-breakdown.png`、`desktop-present-penalty.png` で証拠提示UI、提示前の圧力ボード、成功後の反応分析、誤提示を確認する
+- [x] `desktop-hearing-cross-examination-banner.png` と `mobile-hearing-cross-examination-banner.png` で尋問タイトル幕を確認する
+- [x] `desktop-hearing-court-hud.png` と `mobile-hearing-court-hud.png` で対決パートの法廷HUDを確認する
+- [x] `desktop-hearing-shortcuts.png` と `mobile-hearing-shortcuts.png` で対決ショートカット表示を確認する
+- [x] `desktop-hearing-record-tray.png` と `mobile-hearing-record-tray.png` で法廷記録トレイのカード選択を確認する
+- [x] `desktop-hearing-penalty.png` と `mobile-hearing-penalty.png` で誤提示時の裁判長ペナルティを確認する
+- [x] `desktop-deduction-final-summation.png` と `mobile-deduction-final-summation.png` で最終弁論サマリーを確認する
+- [x] `desktop-casefile-evidence-usage.png`、`desktop-casefile-evidence-compare.png`、`desktop-casefile-evidence-relations.png`、`desktop-casefile-evidence-relation-jump.png`、`desktop-casefile-timeline.png`、`desktop-casefile-testimony.png`、`desktop-casefile-testimony-evidence-link.png`、`desktop-casefile-testimony-return.png`、`mobile-casefile-evidence-usage.png`、`mobile-casefile-evidence-usage-focused.png`、`mobile-casefile-evidence-compare.png`、`mobile-casefile-evidence-relations.png`、`mobile-casefile-timeline.png`、`mobile-casefile-testimony.png`、`mobile-casefile-testimony-evidence-link.png`、`mobile-casefile-testimony-return.png` で証拠詳細の使う場面カード、照合ノート、記録相関図、関連証拠ジャンプ、時系列解析、証言録、証拠詳細から証言録へ戻る導線を確認する
+- [x] `desktop-clash-analysis.png`、`desktop-clash-present.png`、`desktop-clash-hearing.png`、`mobile-clash-analysis.png` で記録照合演出を確認する
+- [x] `desktop-pursuit-memo.png` と `mobile-pursuit-memo.png` で追及メモが直近の突破点を残すことを確認する
+- [x] `desktop-impact-present.png` と `mobile-impact-analysis.png` でインパクト演出を確認する
+- [x] `desktop-portrait-present.png`、`desktop-portrait-hearing.png`、`mobile-portrait-dialogue.png` で人物表情差分の切り替わりを確認する
+- [x] `desktop-hearing-board.png`、`desktop-hearing-reading-guide.png`、`desktop-hearing-reading-evidence.png`、`desktop-hearing-comparison.png`、`desktop-hearing-submit-preview.png`、`desktop-hearing-submit-mismatch.png`、`desktop-hearing-evidence-quicklook.png`、`mobile-hearing.png`、`mobile-hearing-reading-guide.png`、`mobile-hearing-comparison.png`、`mobile-hearing-submit-preview.png`、`mobile-hearing-evidence-quicklook.png` で証言送り型の対決UI、証言読み筋、崩し順メモ、照合レーン、提出前チェック、証拠詳細クイック表示を確認する
+- [x] `desktop-hearing-board.png` で提示可能状態と選択証拠の噛み合わせ表示を確認する
+- [x] `mobile-hearing.png` で対決支援の縦積み表示を確認する
+- [x] `desktop-hearing-press-cue.png`、`desktop-hearing-amendment.png`、`desktop-hearing-miss-cue.png`、`desktop-hearing-miss-recovery-evidence.png`、`mobile-hearing-press-cue.png`、`mobile-hearing-amendment.png` でゆさぶり後の証拠候補、証言更新、誤提示反応、誤提示後の候補証拠クイック表示を確認する
+- [x] `desktop-deduction-stage.png`、`desktop-deduction-fit.png`、`desktop-deduction-fit-wrong.png`、`desktop-deduction-chain.png`、`desktop-deduction-evidence-quicklook.png`、`desktop-deduction-stage-verdict.png`、`desktop-deduction-stage-next.png`、`desktop-deduction-stage-wrong.png`、`desktop-deduction-recovery.png`、`desktop-deduction-recovery-evidence.png`、`mobile-deduction-stage.png`、`mobile-deduction-fit.png`、`mobile-deduction-chain.png`、`mobile-deduction-evidence-quicklook.png`、`mobile-deduction-stage-verdict.png`、`mobile-deduction-recovery.png` で最終推理の連続反論ステージ、反論照合、反論設計メモ、再検討メモ、最終証拠チェーン、中間判定、証拠詳細クイック表示を確認する
+- [x] `desktop-deduction-review.png` と `mobile-deduction-review.png` で最終推理レビューを確認する
+- [x] `desktop-log.png`、`mobile-log.png`、`mobile-log-filtered.png` で詳細ログと絞り込みを確認する
+- [x] `desktop-session-bookmark.png`、`desktop-session-bookmark-log.png`、`mobile-session-bookmark.png` で再開メモとログ導線を確認する
+- [x] `desktop-cutin-damage.png` と `mobile-cutin-damage.png` でカットインを確認する
+- [x] `desktop-audio-settings.png` で音響設定UIと保存状態を確認する
+- [x] ブラウザで `http://127.0.0.1:5174/` を開く
+- [x] localStorage保存後にリロードして復元される
+- [x] リセットボタンで保存が消える
+
