@@ -1,6 +1,7 @@
+import { withBasePath } from './assets';
 import type { Character, MessageTone } from './types';
 
-const DEFAULT_PORTRAIT = '/assets/characters/assistant.svg';
+const DEFAULT_PORTRAIT = withBasePath('/assets/characters/assistant.webp') ?? '/assets/characters/assistant.webp';
 
 export function getCharacterPortrait(character?: Character, tone?: MessageTone): string {
   if (!character) return DEFAULT_PORTRAIT;
@@ -12,3 +13,4 @@ export function getCharacterPortrait(character?: Character, tone?: MessageTone):
     DEFAULT_PORTRAIT
   );
 }
+

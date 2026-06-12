@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Email draft placeholder">
-  <rect width="320" height="220" rx="18" fill="#eef2f3"/>
-  <rect x="62" y="54" width="196" height="112" rx="12" fill="#ffffff"/>
-  <path d="M72 66l88 58 88-58" fill="none" stroke="#0f766e" stroke-width="10" stroke-linejoin="round"/>
-  <path d="M104 146h112" stroke="#8b99a1" stroke-width="8" stroke-linecap="round"/>
-</svg>

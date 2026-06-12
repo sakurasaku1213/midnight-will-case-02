@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 360" role="img" aria-label="Clerk placeholder">
-  <rect width="320" height="360" rx="24" fill="#eef2f3"/>
-  <circle cx="160" cy="112" r="52" fill="#dfc0a8"/>
-  <path d="M96 320c8-70 42-112 64-112s56 42 64 112z" fill="#6d503a"/>
-  <path d="M110 116c12-62 92-54 100-4-30-14-62-16-100 4z" fill="#3a2a22"/>
-  <rect x="118" y="220" width="84" height="58" rx="8" fill="#f7f4ec"/>
-  <path d="M132 240h56M132 260h42" stroke="#8b99a1" stroke-width="8" stroke-linecap="round"/>
-</svg>

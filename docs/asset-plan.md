@@ -20,7 +20,7 @@ public/assets/audio/        将来の本素材SE、環境音
 ## 命名規則
 
 - 小文字英数字とハイフンのみ
-- 例: `conference-room-night.png`
+- 例: `conference-room-night.webp`
 - データ側にはファイル名を直接散らさず、`assetKey` で参照する
 - 実ファイルのパス、素材カテゴリ、生成ブリーフは `src/game/assets.ts` の `assetRegistry` に集約する
 - 高品質画像へ差し替える時は、`assetRegistry` の `src` をPNG/WebPへ向けるか、同じキーのまま参照先だけを更新する
@@ -31,6 +31,6 @@ public/assets/audio/        将来の本素材SE、環境音
 
 ## 現在の状態（2026-06-12 更新）
 
-本番素材への差し替えは完了した。`public/assets/locations/`（4点）、`evidence/`（8点）、`characters/`（14点）、`scenes/`（幕間CG8点＋タイトル1点、新設）にノワール調シネマティックのPNGを配置済みで、`assetRegistry` は PNG を参照し `scene.*` 9キーを含む計35キーになっている。画風・各素材の発注内容・再発注手順は `docs/art-direction.md` を正とする。
+本番素材への差し替えと配布軽量化は完了した。PNG原本は `assets-src/locations/`（4点）、`evidence/`（8点）、`characters/`（14点）、`scenes/`（幕間CG8点＋タイトル1点）に保管し、配信用の `public/assets/` はWebPのみを置く。`assetRegistry` は WebP を参照し `scene.*` 9キーを含む計35キーになっている。画風・各素材の発注内容・再発注手順は `docs/art-direction.md` を正とする。
 
-生成は ChatGPT Web UI（ログイン済みブラウザ操作）で行った。従量課金APIは使用していない。旧プレースホルダSVGは参照されなくなったが、UIリスタイル完了まで削除しない（backlog T11）。効果音は引き続きWeb Audio生成音。
+生成は ChatGPT Web UI（ログイン済みブラウザ操作）で行った。従量課金APIは使用していない。旧プレースホルダSVGはD1で削除済み（backlog T11）。効果音は引き続きWeb Audio生成音。

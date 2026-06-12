@@ -6,9 +6,9 @@ Webゲームとして一般配布するための作業の正。タスクは D1�
 
 以下が完了するまで D4 以降（公開）に進まない:
 
-- [ ] T12 一画面固定レイアウト（`docs/layout-onescreen-spec.md`）
-- [ ] T9 手動QA（`docs/qa-checklist.md` 全項目）
-- [ ] T6 初回コミット / T7 ブランチ `main` 統一（`docs/backlog.md`）
+- [x] T12 一画面固定レイアウト（`docs/layout-onescreen-spec.md`）
+- [x] T9 手動QA（`docs/qa-checklist.md` 全項目）
+- [x] T6 初回コミット / T7 ブランチ `main` 統一（`docs/backlog.md`）
 
 D1〜D3（軽量化・メタ整備・ビルド検証）はゲート前でも並行して進めてよい。
 
@@ -23,6 +23,8 @@ D1〜D3（軽量化・メタ整備・ビルド検証）はゲート前でも並�
 | `index.html` | `lang="ja"`・title・description あり。**OGP・favicon なし、説明文に「開発版」表記** | D2で整備 |
 
 結論: **D1（画像軽量化）が配布の必須条件**。目標は「全アセット合計 ≤ 8MB、タイトル画面の初回転送 ≤ 1.5MB」。
+
+追記（2026-06-12）: D1〜D3は完了。`public/assets` はWebP 35点・約1.5MB、`dist` は約3.2MBまで軽量化済み。PNG原本は `assets-src/` で管理する。
 
 ## 2. タスク
 

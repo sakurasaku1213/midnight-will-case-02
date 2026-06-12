@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { LocationScene } from '../components/LocationScene';
-import { getAssetRegistryStats, resolveAsset } from '../game/assets';
+import { getAssetRegistryStats, resolveAsset, withBasePath } from '../game/assets';
 import { playSfx } from '../game/audio';
 import type { SfxCue } from '../game/audio';
 import { ProgressTrail } from '../components/ProgressTrail';
@@ -1318,6 +1318,9 @@ function TitleScreen({
           />
         </div>
       ) : null}
+      <p className="title-disclaimer">
+        本作はフィクションです。実在の事件・人物・団体とは関係ありません。
+      </p>
     </section>
   );
 }
@@ -1660,7 +1663,7 @@ function EvidenceClash({
           const evidence = evidenceById.get(id);
           return (
             <span key={id}>
-              <img src={evidence?.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={evidence?.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               {evidence?.name ?? id}
             </span>
           );
@@ -2513,7 +2516,7 @@ function EndingResultPanel({
       label: question.stageLabel ?? question.prompt,
       answer: question.choices.find((choice) => choice.id === question.answer)?.label ?? question.answer,
       evidenceName: evidence?.name ?? question.evidenceAnswer,
-      evidenceImage: evidence?.image ?? '/assets/evidence/document-stack.svg',
+      evidenceImage: evidence?.image ?? withBasePath('/assets/evidence/document-stack.webp'),
     };
   });
 
@@ -2585,7 +2588,7 @@ function VerdictScenePanel({ evidenceById }: { evidenceById: Map<string, Evidenc
             <p>{point.text}</p>
             {point.evidence ? (
               <small>
-                <img src={point.evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={point.evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                 {point.evidence.name}
               </small>
             ) : null}
@@ -3074,7 +3077,7 @@ function ConsultPanel({
               key={item.id}
               onClick={() => onOpenEvidence(item.id)}
             >
-              <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               <span>
                 <strong>{item.name}</strong>
                 <small>事件ファイルで読む</small>
@@ -3679,7 +3682,7 @@ function MovePanel({
               disabled={location.id === currentLocationId}
               onClick={() => onMove(location.id)}
             >
-              <img src={location.image ?? '/assets/locations/conference-room.svg'} alt="" />
+              <img src={location.image ?? withBasePath('/assets/locations/conference-room.webp')} alt="" />
               <div className="move-route-body">
                 <div>
                   <span>{routeInfo.label}</span>
@@ -3789,7 +3792,7 @@ function InspectPanel({
       {items.length ? (
         <>
           <figure className="investigation-board" aria-label={`${location.name}の調査ポイント`}>
-            <img src={location.image ?? '/assets/locations/conference-room.svg'} alt="" />
+            <img src={location.image ?? withBasePath('/assets/locations/conference-room.webp')} alt="" />
             {items.map((item, index) => {
               const spot = getInvestigationSpot(item.id, index, items.length);
               return (
@@ -3939,7 +3942,7 @@ function InvestigationMemo({
             <div className="investigation-memo-evidence">
               {foundEvidence.map((item) => (
                 <em key={item.id}>
-                  <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                  <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                   {item.name}
                 </em>
               ))}
@@ -4369,7 +4372,7 @@ function PresentPreview({
         <span>証拠</span>
         {evidence ? (
           <div className="present-evidence">
-            <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+            <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
             <div>
               <strong>{evidence.name}</strong>
               <p>{evidence.description}</p>
@@ -4551,7 +4554,7 @@ function PresentTargetBoard({
                   onSelection({ characterId: reaction.characterId, evidenceId: reaction.evidenceId })
                 }
               >
-                <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                 <strong>{item.name}</strong>
                 <small>{reaction.label}</small>
               </button>
@@ -4636,7 +4639,7 @@ function PresentMissNotePanel({
         <div className="present-miss-evidence">
           {recommended.map((item) => (
             <button type="button" key={item.id} onClick={() => onOpenEvidence(item.id)}>
-              <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               <span>{item.name}</span>
             </button>
           ))}
@@ -4942,7 +4945,7 @@ function AnalysisChainBoard({
                       onSelection({ ...selections, [step.link.id]: next });
                     }}
                   >
-                    <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                    <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                     <span>{item.name}</span>
                   </button>
                 );
@@ -5530,7 +5533,7 @@ function HearingRecordTray({
               key={item.id}
             >
               <button type="button" onClick={() => onSelectEvidence(item.id)}>
-                <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                 <span>{target ? '矛盾候補' : item.isKey ? '重要記録' : '記録'}</span>
                 <strong>{item.name}</strong>
                 <small>{getEvidenceFactPoint(item.id, item.detail)}</small>
@@ -5797,7 +5800,7 @@ function HearingBreakthroughPanel({
               <p>{item.detail}</p>
               {evidence ? (
                 <small>
-                  <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                  <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                   {evidence.name}
                 </small>
               ) : null}
@@ -5879,7 +5882,7 @@ function HearingLedger({
               <em>{getHearingLedgerStatusLabel(step.status)}</em>
               {step.evidence && state.evidenceIds.includes(step.evidence.id) ? (
                 <small>
-                  <img src={step.evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                  <img src={step.evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                   {step.evidence.name}
                 </small>
               ) : (
@@ -5927,7 +5930,7 @@ function HearingReadingGuide({
           <span>読む記録</span>
           {guide.evidence ? (
             <button type="button" onClick={() => onOpenEvidence(guide.evidence!.id)}>
-              <img src={guide.evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={guide.evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               <strong>{guide.evidence.name}</strong>
             </button>
           ) : (
@@ -6086,7 +6089,7 @@ function HearingStatementDock({
           <span>Record</span>
           {expectedEvidence ? (
             <button type="button" onClick={() => onOpenEvidence(expectedEvidence.id)}>
-              <img src={expectedEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={expectedEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               <strong>{expectedEvidence.name}</strong>
             </button>
           ) : (
@@ -6292,7 +6295,7 @@ function HearingAmendmentPanel({
             <div className="hearing-amendment-evidence">
               {candidateEvidence.map((item) => (
                 <button type="button" key={item.id} onClick={() => onOpenEvidence(item.id)}>
-                  <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                  <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                   <strong>{item.name}</strong>
                 </button>
               ))}
@@ -6386,7 +6389,7 @@ function HearingCuePanel({
                 type="button"
                 onClick={() => onOpenEvidence(item.id)}
               >
-                <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                 {item.name}
               </button>
             ))}
@@ -6405,7 +6408,7 @@ function HearingCuePanel({
       ) : null}
       {evidence ? (
         <div className="hearing-cue-evidence">
-          <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+          <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
           <span>{evidence.name}</span>
         </div>
       ) : null}
@@ -6479,7 +6482,7 @@ function HearingRecoveryNote({
           <span>読み直す記録</span>
           {primaryEvidence ? (
             <button type="button" onClick={() => onOpenEvidence(primaryEvidence.id)}>
-              <img src={primaryEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={primaryEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               <strong>{primaryEvidence.name}</strong>
             </button>
           ) : (
@@ -6547,7 +6550,7 @@ function HearingSequencePanel({
                   type="button"
                   onClick={() => onOpenEvidence(evidence.id)}
                 >
-                  <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                  <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                   <span>{evidence.name}</span>
                 </button>
               ) : (
@@ -6855,7 +6858,7 @@ function ConfrontationDock({
           {evidence ? (
             <>
               <div className="dock-evidence">
-                <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                 <div>
                   <strong>{evidence.name}</strong>
                   <p>{evidence.description}</p>
@@ -7600,7 +7603,7 @@ function DeductionBrief({
               <strong>{choice?.label ?? '結論未選択'}</strong>
               {selectedEvidence ? (
                 <em>
-                  <img src={selectedEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                  <img src={selectedEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                   {selectedEvidence.name}
                 </em>
               ) : (
@@ -7688,7 +7691,7 @@ function DeductionFinalArgumentPanel({
                 type="button"
                 onClick={() => onOpenEvidence(row.selectedEvidence!.id)}
               >
-                <img src={row.selectedEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={row.selectedEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                 <span>{row.selectedEvidence.name}</span>
               </button>
             ) : (
@@ -7796,7 +7799,7 @@ function FinalSummationPanel({
                 type="button"
                 onClick={() => onOpenEvidence(row.selectedEvidence!.id)}
               >
-                <img src={row.selectedEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={row.selectedEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                 <span>{row.selectedEvidence.name}</span>
               </button>
             ) : null}
@@ -7970,7 +7973,7 @@ function FinalEvidenceChain({
               </button>
               {selectedEvidence ? (
                 <div className="chain-evidence">
-                  <img src={selectedEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                  <img src={selectedEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                   <div>
                     <strong>{selectedEvidence.name}</strong>
                     <p>{getChainPlacementLabel(timeline, issues)}</p>
@@ -8009,7 +8012,7 @@ function FinalEvidenceChain({
                   <strong>{getDeductionBriefRole(question.id, undefined, true)}</strong>
                   {selectedEvidence ? (
                     <small>
-                      <img src={selectedEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                      <img src={selectedEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                       {selectedEvidence.name}
                     </small>
                   ) : null}
@@ -8137,7 +8140,7 @@ function DeductionArgumentStage({
           <span>根拠証拠</span>
           {selectedEvidence ? (
             <div className="deduction-stage-evidence">
-              <img src={selectedEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={selectedEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               <div>
                 <strong>{selectedEvidence.name}</strong>
                 <p>{selectedEvidence.description}</p>
@@ -8399,7 +8402,7 @@ function QuestionBlock({
         </label>
         {selectedEvidence ? (
           <div className="deduction-evidence-preview">
-            <img src={selectedEvidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+            <img src={selectedEvidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
             <div>
               <strong>{selectedEvidence.name}</strong>
               <small>{selectedEvidence.description}</small>
@@ -8574,7 +8577,7 @@ function EvidenceFile({
             type="button"
             onClick={() => onSelectEvidence(item.id)}
           >
-            <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+            <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
             <div>
               <h3>{item.name}</h3>
               {item.isKey ? <span>重要</span> : null}
@@ -8899,7 +8902,7 @@ function EvidenceComparisonNote({
 function EvidenceComparisonMini({ evidence, label }: { evidence: Evidence; label: string }) {
   return (
     <div className="comparison-mini">
-      <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+      <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
       <div>
         <span>{label}</span>
         <strong>{evidence.name}</strong>
@@ -8953,7 +8956,7 @@ function EvidenceRelationMap({
           <div>
             {relatedEvidence.map((item) => (
               <button type="button" key={item.id} onClick={() => onSelectEvidence(item.id)}>
-                <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                 <strong>{item.name}</strong>
               </button>
             ))}
@@ -9102,7 +9105,7 @@ function EvidenceDetail({
 
   return (
     <aside className="evidence-detail" aria-label="証拠詳細">
-      <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+      <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
       <div>
         <p>{evidence.isKey ? '重要証拠' : '証拠'}</p>
         <h3>{evidence.name}</h3>
@@ -9450,7 +9453,7 @@ function FoundEvidencePanel({
 
   return (
     <aside className="evidence-found-panel" aria-label="証拠入手" role="status">
-      <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+      <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
       <div className="found-evidence-copy">
         <span>{evidence.isKey ? '重要証拠を入手' : '証拠を入手'}</span>
         <h3>{evidence.name}</h3>
@@ -9543,7 +9546,7 @@ function TheoryProgressCard({
         <div className="theory-progress-evidence" aria-label="次の論点の取得済み証拠">
           {nextEvidence.map((item) => (
             <span key={item.id}>
-              <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               {item.name}
             </span>
           ))}
@@ -9636,7 +9639,7 @@ function SessionBookmark({
         <div className="session-bookmark-evidence" aria-label="直近の関連証拠">
           {evidence.map((item) => (
             <span key={item.id}>
-              <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               {item.name}
             </span>
           ))}
@@ -9750,7 +9753,7 @@ function PeopleFile({
                 <div className="person-evidence-row" aria-label={`${character.name} related evidence`}>
                   {dossier.evidence.map((item) => (
                     <span key={item.id}>
-                      <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                      <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                       {item.name}
                     </span>
                   ))}
@@ -9897,7 +9900,7 @@ function TimelineFile({
                   <div className="timeline-event-evidence" aria-label={`${event.title}の証拠`}>
                     {eventEvidence.map((item) => (
                       <em key={item.id}>
-                        <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                        <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                         {item.name}
                       </em>
                     ))}
@@ -10062,7 +10065,7 @@ function TestimonyFileCard({
             <div className="testimony-file-evidence">
               {evidenceToShow.map((item) => (
                 <button type="button" key={item.id} onClick={() => onOpenEvidence(item.id)}>
-                  <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                  <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                   <strong>{item.name}</strong>
                 </button>
               ))}
@@ -10182,7 +10185,7 @@ function TheoryIssueCard({
           return (
             <span className={acquired ? 'acquired' : 'locked'} key={id}>
               {acquired && evidence ? (
-                <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               ) : null}
               {acquired && evidence ? evidence.name : '未入手'}
             </span>
@@ -10403,7 +10406,7 @@ function ReviewSection({
                   if (!evidence) return null;
                   return (
                     <span key={id}>
-                      <img src={evidence.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                      <img src={evidence.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                       {evidence.name}
                     </span>
                   );
@@ -10771,7 +10774,7 @@ function HistoryCaseSummary({
         <div className="history-summary-evidence" aria-label="summary evidence">
           {evidence.map((item) => (
             <button type="button" key={item.id} onClick={() => onOpenEvidence(item.id)}>
-              <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+              <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
               <span>{item.name}</span>
             </button>
           ))}
@@ -10902,7 +10905,7 @@ function LogPanel({
                       <div className="history-evidence" aria-label="取得証拠">
                         {entryEvidence.map((item) => (
                           <button key={item.id} type="button" onClick={() => onOpenEvidence(item.id)}>
-                            <img src={item.image ?? '/assets/evidence/document-stack.svg'} alt="" />
+                            <img src={item.image ?? withBasePath('/assets/evidence/document-stack.webp')} alt="" />
                             <span>{item.name}</span>
                           </button>
                         ))}
@@ -10986,3 +10989,4 @@ function PanelTitle({
     </div>
   );
 }
+

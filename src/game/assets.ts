@@ -12,245 +12,245 @@ export interface AssetSlot {
 
 export const assetRegistry = {
   'location.conference-room': {
-    src: '/assets/locations/conference-room.png',
+    src: '/assets/locations/conference-room.webp',
     label: '第2会議室',
     kind: 'location',
     priority: 1,
     brief: '深夜の法律事務所、共用PC、提出前夜の緊張が読める背景。',
   },
   'location.records-corner': {
-    src: '/assets/locations/records-corner.png',
+    src: '/assets/locations/records-corner.webp',
     label: '記録棚',
     kind: 'location',
     priority: 1,
     brief: '事件記録と聴取メモが残る棚。紙資料の密度と探索感を優先する。',
   },
   'location.copy-room': {
-    src: '/assets/locations/copy-room.png',
+    src: '/assets/locations/copy-room.webp',
     label: 'コピー室',
     kind: 'location',
     priority: 1,
     brief: '複合機の履歴と深夜印刷の違和感が見える小部屋。',
   },
   'location.reception': {
-    src: '/assets/locations/reception.png',
+    src: '/assets/locations/reception.webp',
     label: '受付前',
     kind: 'location',
     priority: 1,
     brief: 'カードリーダーと来訪端末が目に入る、暗い受付前の背景。',
   },
   'evidence.old-draft': {
-    src: '/assets/evidence/document-stack.png',
+    src: '/assets/evidence/document-stack.webp',
     label: '準備書面旧版',
     kind: 'evidence',
     priority: 2,
     brief: '旧版と最新版の差分が想像できる紙束。赤字なしでも重要証拠だと分かる構図。',
   },
   'evidence.redline-note': {
-    src: '/assets/evidence/redline-note.png',
+    src: '/assets/evidence/redline-note.webp',
     label: '赤入れメモ',
     kind: 'evidence',
     priority: 2,
     brief: '削除された一文と危険性の指摘が、サムネイルでも赤入れ資料として読める証拠。',
   },
   'evidence.phone-note': {
-    src: '/assets/evidence/phone-note.png',
+    src: '/assets/evidence/phone-note.webp',
     label: '電話聴取メモ',
     kind: 'evidence',
     priority: 2,
     brief: '相手名と日付の曖昧さが残る、手書き感のある電話聴取メモ。',
   },
   'evidence.printer-log': {
-    src: '/assets/evidence/printer-log.png',
+    src: '/assets/evidence/printer-log.webp',
     label: 'プリンタ履歴',
     kind: 'evidence',
     priority: 2,
     brief: '複合機の印刷ログ。ミスリード証拠として時刻だけが強く見える画面。',
   },
   'evidence.file-history': {
-    src: '/assets/evidence/file-history.png',
+    src: '/assets/evidence/file-history.webp',
     label: 'ファイル更新履歴',
     kind: 'evidence',
     priority: 2,
     brief: '共有PC上の保存時刻とユーザー名を想起できる、デジタルログ系の証拠。',
   },
   'evidence.visitor-log': {
-    src: '/assets/evidence/visitor-card.png',
+    src: '/assets/evidence/visitor-card.webp',
     label: '来訪カード履歴',
     kind: 'evidence',
     priority: 2,
     brief: '深夜来訪の足跡。カードリーダーの無機質な記録が中心になる証拠。',
   },
   'evidence.email-draft': {
-    src: '/assets/evidence/email-draft.png',
+    src: '/assets/evidence/email-draft.webp',
     label: 'メール下書き',
     kind: 'evidence',
     priority: 2,
     brief: '削除理由が残った未送信メール。スマホまたはPCの下書き画面として成立させる。',
   },
   'evidence.scheduled-message': {
-    src: '/assets/evidence/scheduled-message.png',
+    src: '/assets/evidence/scheduled-message.webp',
     label: '送信予約メモ',
     kind: 'evidence',
     priority: 2,
     brief: '削除後に説明するつもりだった予約メモ。時刻とためらいが読める証拠。',
   },
   'character.lead-lawyer.neutral': {
-    src: '/assets/characters/lead-lawyer.png',
+    src: '/assets/characters/lead-lawyer.webp',
     label: '小野寺 弁護士 通常',
     kind: 'character',
     priority: 3,
     brief: '提出判断の責任を背負う主任弁護士。落ち着きと迷いを同居させる。',
   },
   'character.lead-lawyer.pressure': {
-    src: '/assets/characters/lead-lawyer-pressure.png',
+    src: '/assets/characters/lead-lawyer-pressure.webp',
     label: '小野寺 弁護士 追及',
     kind: 'character',
     priority: 3,
     brief: '記録の危険性に踏み込む表情。厳しさを出しすぎず、職業的な緊張を優先する。',
   },
   'character.lead-lawyer.success': {
-    src: '/assets/characters/lead-lawyer-success.png',
+    src: '/assets/characters/lead-lawyer-success.webp',
     label: '小野寺 弁護士 解決',
     kind: 'character',
     priority: 3,
     brief: '提出判断を固めた後の静かな納得。派手な笑顔より責任感を残す。',
   },
   'character.clerk-a.neutral': {
-    src: '/assets/characters/clerk-a.png',
+    src: '/assets/characters/clerk-a.webp',
     label: '真壁 事務員 通常',
     kind: 'character',
     priority: 3,
     brief: '最初に疑われる事務員。疲れと緊張があるが、犯人らしさに寄せすぎない。',
   },
   'character.clerk-a.pressure': {
-    src: '/assets/characters/clerk-a-pressure.png',
+    src: '/assets/characters/clerk-a-pressure.webp',
     label: '真壁 事務員 追及',
     kind: 'character',
     priority: 3,
     brief: '深夜印刷を問われて身構える表情。ミスリードの圧を出す。',
   },
   'character.clerk-a.damage': {
-    src: '/assets/characters/clerk-a-damage.png',
+    src: '/assets/characters/clerk-a-damage.webp',
     label: '真壁 事務員 動揺',
     kind: 'character',
     priority: 3,
     brief: '疑いが外れた後の戸惑い。弱さと安心が混ざる表情。',
   },
   'character.client-b.neutral': {
-    src: '/assets/characters/client-b.png',
+    src: '/assets/characters/client-b.webp',
     label: '久世 依頼者 通常',
     kind: 'character',
     priority: 3,
     brief: '有利な一文を求めた依頼者。強気だが、内心の不安を隠している。',
   },
   'character.client-b.pressure': {
-    src: '/assets/characters/client-b-pressure.png',
+    src: '/assets/characters/client-b-pressure.webp',
     label: '久世 依頼者 追及',
     kind: 'character',
     priority: 3,
     brief: '来訪と更新履歴を突きつけられ、言い訳を探している表情。',
   },
   'character.client-b.damage': {
-    src: '/assets/characters/client-b-damage.png',
+    src: '/assets/characters/client-b-damage.webp',
     label: '久世 依頼者 動揺',
     kind: 'character',
     priority: 3,
     brief: '削除の理由を隠しきれなくなった瞬間。大げさすぎない崩れ方にする。',
   },
   'character.client-b.success': {
-    src: '/assets/characters/client-b-success.png',
+    src: '/assets/characters/client-b-success.webp',
     label: '久世 依頼者 納得',
     kind: 'character',
     priority: 3,
     brief: '説明責任を受け入れた表情。勝利感ではなく、苦い納得を出す。',
   },
   'character.assistant.neutral': {
-    src: '/assets/characters/assistant.png',
+    src: '/assets/characters/assistant.webp',
     label: '主人公 通常',
     kind: 'character',
     priority: 3,
     brief: '若手弁護士として記録を読む主人公。プレイヤーの視点に近い冷静さ。',
   },
   'character.assistant.pressure': {
-    src: '/assets/characters/assistant-pressure.png',
+    src: '/assets/characters/assistant-pressure.webp',
     label: '主人公 追及',
     kind: 'character',
     priority: 3,
     brief: '矛盾へ踏み込む表情。異議ありの勢いと法律実務の落ち着きを両立する。',
   },
   'character.assistant.damage': {
-    src: '/assets/characters/assistant-damage.png',
+    src: '/assets/characters/assistant-damage.webp',
     label: '主人公 再検討',
     kind: 'character',
     priority: 3,
     brief: '読み違いに気づいた表情。失敗しても次の記録へ戻れる雰囲気を残す。',
   },
   'character.assistant.success': {
-    src: '/assets/characters/assistant-success.png',
+    src: '/assets/characters/assistant-success.webp',
     label: '主人公 突破',
     kind: 'character',
     priority: 3,
     brief: '証拠の鎖がつながった瞬間。派手すぎない達成感を出す。',
   },
   'scene.op-missing-line': {
-    src: '/assets/scenes/op-missing-line.png',
+    src: '/assets/scenes/op-missing-line.webp',
     label: '開幕1 消えた一文',
     kind: 'scene',
     priority: 4,
     brief: '深夜、新旧書面を見比べて消えた一文に気づく主人公の横顔。',
   },
   'scene.op-risk': {
-    src: '/assets/scenes/op-risk.png',
+    src: '/assets/scenes/op-risk.webp',
     label: '開幕2 危うい一文',
     kind: 'scene',
     priority: 4,
     brief: '赤丸の付いた旧版書面と冷めたコーヒー。緊張の静物。',
   },
   'scene.op-resolve': {
-    src: '/assets/scenes/op-resolve.png',
+    src: '/assets/scenes/op-resolve.webp',
     label: '開幕3 初動',
     kind: 'scene',
     priority: 4,
     brief: '暗い廊下を会議室の灯りへ歩き出す主人公の後ろ姿。',
   },
   'scene.ed-truth': {
-    src: '/assets/scenes/ed-truth.png',
+    src: '/assets/scenes/ed-truth.webp',
     label: '成功終幕1 真相',
     kind: 'scene',
     priority: 4,
     brief: '記録を差し出す主人公と、目を伏せる久世の対峙。',
   },
   'scene.ed-judgment': {
-    src: '/assets/scenes/ed-judgment.png',
+    src: '/assets/scenes/ed-judgment.webp',
     label: '成功終幕3 提出判断',
     kind: 'scene',
     priority: 4,
     brief: '小野寺が訂正済み書面に署名する手元。判断の重さ。',
   },
   'scene.ed-dawn': {
-    src: '/assets/scenes/ed-dawn.png',
+    src: '/assets/scenes/ed-dawn.webp',
     label: '成功終幕 予備 夜明け',
     kind: 'scene',
     priority: 5,
     brief: '夜明けの事務所と整えられた書面の束。エピローグ用の予備。',
   },
   'scene.ed-fail-records': {
-    src: '/assets/scenes/ed-fail-records.png',
+    src: '/assets/scenes/ed-fail-records.webp',
     label: '不成立終幕1 散らばる記録',
     kind: 'scene',
     priority: 4,
     brief: '読み解けないまま散乱した記録。冷たい青が支配する。',
   },
   'scene.ed-fail-morning': {
-    src: '/assets/scenes/ed-fail-morning.png',
+    src: '/assets/scenes/ed-fail-morning.webp',
     label: '不成立終幕2 確信のない朝',
     kind: 'scene',
     priority: 4,
     brief: '灰色の朝、鞄を持ち事務所を出る主人公の後ろ姿。',
   },
   'scene.title': {
-    src: '/assets/scenes/title-key-visual.png',
+    src: '/assets/scenes/title-key-visual.webp',
     label: 'タイトルキービジュアル',
     kind: 'scene',
     priority: 4,
@@ -260,9 +260,21 @@ export const assetRegistry = {
 
 export type AssetKey = keyof typeof assetRegistry;
 
+export function withBasePath(src?: string): string | undefined {
+  if (!src) return undefined;
+  if (/^(?:[a-z][a-z\d+.-]*:)?\/\//i.test(src) || src.startsWith('data:') || src.startsWith('blob:')) {
+    return src;
+  }
+  if (!src.startsWith('/')) return src;
+
+  const baseUrl = import.meta.env.BASE_URL;
+  const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  return `${base}${src.slice(1)}`;
+}
+
 export function resolveAsset(assetKey?: string, fallback?: string): string | undefined {
-  if (!assetKey) return fallback;
-  return assetRegistry[assetKey as AssetKey]?.src ?? fallback;
+  if (!assetKey) return withBasePath(fallback);
+  return withBasePath(assetRegistry[assetKey as AssetKey]?.src ?? fallback);
 }
 
 export function getAssetRegistryStats() {
@@ -334,3 +346,4 @@ function hydrateCharacter(character: Character): Character {
     portraitVariants: resolvedVariants,
   };
 }
+

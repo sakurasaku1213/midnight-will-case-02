@@ -2,6 +2,12 @@
 
 `午前0時の遺言書` の続編として作る、法律事務所ミステリーADVの開発ルートです。
 
+公開URL:
+
+```text
+https://sakurasaku1213.github.io/midnight-will-case-02/
+```
+
 前作は `React / TypeScript / Vite` のデータ駆動型Webゲームだったため、続編も同じ方向で開始します。シナリオ、証拠品、会話、争点整理、対決、最終推理を `data/episode-02.json` に寄せ、実装側は再利用しやすい薄いゲームエンジンとして切り出します。
 
 ## 起動

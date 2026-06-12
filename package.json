@@ -1,6 +1,6 @@
 {
   "name": "midnight-will-case-02",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,8 @@
     "preview": "vite preview --host 127.0.0.1 --port 4174",
     "typecheck": "tsc --noEmit",
     "validate:episode": "node scripts/validate-episode.mjs",
-    "test:playthrough": "node tests/playthrough.mjs"
+    "test:playthrough": "node tests/playthrough.mjs",
+    "optimize:assets": "node scripts/optimize-assets.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -22,6 +23,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.0.0",
     "playwright-core": "^1.59.1",
+    "sharp": "^0.35.1",
     "typescript": "^5.8.0",
     "vite": "^7.0.0"
   }

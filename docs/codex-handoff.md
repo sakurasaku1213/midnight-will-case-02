@@ -10,17 +10,15 @@
 | --- | --- | --- |
 | シナリオデータ `data/episode-02.json` | 完成。キャラ4 / 証拠8 / 場所4 / フラグ25 | `npm.cmd run validate:episode` エラー0件・警告5件（警告は既知。`docs/data-spec.md` の「validator警告の扱い」参照） |
 | ゲーム実装 `src/` | 完成。調査〜最終推理〜事件解剖まで全導線実装済み | `npm.cmd run build` 成功（tsc + vite。JS約470KB / CSS約178KB） |
-| **デザインアセット**（2026-06-12 完了） | ノワール調シネマティックで全35点（背景4・証拠8・人物14・幕間CG8・タイトル1）を生成・配置・組み込み済み。`assetRegistry` は PNG 参照＋ `scene.*` 9キー | `validate:episode` エラー0件 / `build` 成功 / `test:playthrough` 完走 |
+| **デザインアセット**（2026-06-12 完了） | ノワール調シネマティックで全35点（背景4・証拠8・人物14・幕間CG8・タイトル1）を生成・組み込み済み。PNG原本は `assets-src/`、配信用は `public/assets/` のWebP。`assetRegistry` は WebP 参照＋ `scene.*` 9キー | `validate:episode` エラー0件 / `build` 成功 / `test:playthrough` 完走 |
 | 検証ツール | `scripts/validate-episode.mjs` と `tests/playthrough.mjs` が動作 | 本書「コマンド」参照 |
-| CI | `.github/workflows/build.yml`（main への push / PR で build） | ※ブランチ名の不一致あり。backlog P2 参照 |
+| CI | `.github/workflows/build.yml`（main への push / PR で build） | ブランチは `main` に統一済み。リモート未設定 |
 | ドキュメント | 企画・物語・制作仕様・QA・素材・デザイン・機能ノート一式 | 本書「文書マップ」参照 |
 
 ### 未完了（残作業）
 
-1. **一画面固定レイアウト実装**: UIリスタイル（R1〜R22）は完了したが、縦長レイアウト（実測4030px＝4.4画面分）の解消が必要。仕様は `docs/layout-onescreen-spec.md`（タスク S1〜S10）に確定済み。これが次の最優先
-2. **Git整備**: コミットが1件もない。現ブランチ `master` と CI 対象 `main` の不一致解消も必要
-3. **手動QA完走**: `docs/qa-checklist.md` の全項目を通しで確認した記録がない（自動プレイスルーは2026-06-12完走済み）
-4. **配布**: 一般配布が決定。手順は `docs/release-spec.md`（D1〜D7）。特に D1 アセット軽量化（現状67.4MB→8MB以下）が必須条件。公開はリリースゲート（上記1〜3）通過後
+1. **公開作業**: 一般配布が決定。手順は `docs/release-spec.md`（D1〜D7）。D1〜D3は完了済みのため、次は D4 GitHub Pages 公開
+2. **任意のデータ衛生**: validator警告5件は既知仕様。警告0化する場合は `docs/backlog.md` T10
 
 → 作業手順・受け入れ基準は `docs/backlog.md` を正とする。
 
@@ -73,6 +71,7 @@ npm.cmd run preview          # ビルド成果物の確認 http://127.0.0.1:4174
 | `data/episode-02.json` | `validate:episode` エラー0件 → `build` 成功 → 進行に関わる変更なら `test:playthrough` |
 | `src/`（UI・ロジック） | `build` 成功 → デスクトップとモバイル幅の両方で表示確認（`qa-checklist.md` の「表示」節） |
 | `public/assets/` と `src/game/assets.ts` | `validate:episode`（素材パス存在チェックを含む）→ 該当画面の表示確認 |
+| `assets-src/` と `scripts/optimize-assets.mjs` | `npm.cmd run optimize:assets` → `validate:episode` → `build`。PNG原本からWebP/OGP/faviconを再生成 |
 | `docs/` | 対応する実装・データと矛盾していないこと |
 
 ## やらないこと

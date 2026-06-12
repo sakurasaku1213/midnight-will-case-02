@@ -13458,7 +13458,7 @@ body::before {
   inset: 0;
   z-index: 1000;
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto auto;
+  grid-template-rows: minmax(0, 1fr) auto auto auto;
   gap: var(--space-4);
   place-items: center;
   overflow: hidden;
@@ -13492,7 +13492,8 @@ body::before {
 
 .title-logo,
 .title-actions,
-.title-settings {
+.title-settings,
+.title-disclaimer {
   position: relative;
   z-index: 1;
 }
@@ -13580,6 +13581,15 @@ body::before {
 
 .title-settings .audio-controls {
   justify-content: center;
+}
+
+.title-disclaimer {
+  max-width: min(520px, 100%);
+  margin: 0;
+  color: var(--text-faint);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  text-align: center;
 }
 
 .topbar {

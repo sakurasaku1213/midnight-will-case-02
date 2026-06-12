@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Scale } from 'lucide-react';
+import { withBasePath } from '../game/assets';
 import { getCharacterPortrait } from '../game/portraits';
 import type { Episode, GameState, Location, StoryScene } from '../game/types';
 
@@ -37,7 +38,7 @@ export function LocationScene({
   const speakerName = isStoryMode && !storyScene?.speakerId ? '事件記録' : speaker?.name ?? '主人公';
   const speakerRole = isStoryMode && !storyScene?.speakerId ? '幕間' : speaker?.role ?? '進行';
   const narrative = storyScene?.text ?? state.narrative;
-  const artSrc = storyScene?.image ?? location.image ?? '/assets/locations/conference-room.svg';
+  const artSrc = storyScene?.image ?? location.image ?? withBasePath('/assets/locations/conference-room.webp');
   const caption = storyScene?.label ?? (isBriefing ? '深夜の法律事務所' : location.name);
   const hasStoryScenes = storyScenes.length > 0;
   const canGoPrevious = hasStoryScenes && storySceneIndex > 0;
@@ -153,3 +154,4 @@ function getModeLabel(mode: GameState['mode']): string {
       return '結末';
   }
 }
+

@@ -60,7 +60,7 @@
   - 案A（推奨）: `scripts/validate-episode.mjs` にエンジン参照フラグのホワイトリスト（`analysis_time_window` / `analysis_final_chain` / `analysis_complete`）と記録用フラグ（`printer_mislead_cleared` / `pressed_visit_only`）を追加し、警告0件にする
   - 案B: 現状維持（文書で既知警告として管理）
   - 受け入れ基準（案Aの場合）: `validate:episode` がエラー0件・警告0件になり、未知のフラグを足した時には引き続き警告が出ること
-- [ ] **T11 旧プレースホルダSVGの削除（UIリスタイル完了後）**: `public/assets/` 配下の `.svg` は全て未参照になった。T5完了・QA通過後にまとめて削除する
+- [x] **T11 旧プレースホルダSVGの削除（2026-06-12）**: `public/assets/` 配下の `.svg` は全て削除済み。D1のWebP化と同時に実施した
   - 受け入れ基準: 削除後に `validate:episode` エラー0件・`build` 成功・`test:playthrough` 完走
   - 注: 配布タスク D1（アセット軽量化）の中で一緒に実施してよい
 
@@ -68,11 +68,11 @@
 
 一般配布が決定した。作業の正は `docs/release-spec.md`（タスク D1〜D7）。本線は GitHub Pages、任意で itch.io。
 
-- [ ] **T13 アセット軽量化（D1）**: 現状 `public/assets` が67.4MBで配布不可級。WebP化で合計8MB以下へ。**配布の必須条件**
-- [ ] **T14 メタ整備（D2）**: title/OGP/favicon/フィクション表記
-- [ ] **T15 ビルド・配布物検証（D3）**
-- [ ] **T16 GitHub Pages 公開（D4）**: リポジトリ作成とPages有効化はユーザー操作。deploy.yml 追加と push は Codex
-- [ ] **T17 v1.0.0 タグとリリース（D5）**
+- [x] **T13 アセット軽量化（D1・2026-06-12）**: PNG原本は `assets-src/` へ移動、配信用はWebPへ変換。`public/assets` 合計は約1.5MB
+- [x] **T14 メタ整備（D2・2026-06-12）**: title/description/OGP/Twitter/favicon/apple-touch-icon/フィクション表記を整備
+- [x] **T15 ビルド・配布物検証（D3・2026-06-12）**: GitHub Pages baseビルド、通常preview、セーブ復帰、dist 10MB以下を確認
+- [x] **T16 GitHub Pages 公開（D4・2026-06-12）**: `sakurasaku1213/midnight-will-case-02` を作成し、GitHub Actions Pagesで公開
+- [x] **T17 v1.0.0 タグとリリース（D5・2026-06-12）**: `package.json` を `1.0.0` に更新し、`v1.0.0` タグとGitHub Releaseを作成
 - [ ] **T18 itch.io 配布（D6・任意）**
 - [ ] **T19 公開後スモークチェック（D7）**
 

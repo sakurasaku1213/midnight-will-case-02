@@ -10,9 +10,16 @@ export type SfxCue =
   | 'verdict';
 
 let audioContext: AudioContext | undefined;
+let audioUnlocked = false;
+let audioUnlockListenersInstalled = false;
 
 export function playSfx(cue: SfxCue, volume: number): void {
   if (typeof window === 'undefined' || volume <= 0) return;
+  installAudioUnlockListeners();
+  if (navigator.userActivation?.hasBeenActive || navigator.userActivation?.isActive) {
+    audioUnlocked = true;
+  }
+  if (!audioUnlocked) return;
 
   try {
     const AudioContextCtor =
@@ -55,6 +62,20 @@ export function playSfx(cue: SfxCue, volume: number): void {
   } catch {
     // Sound is decorative; keep gameplay available if Web Audio is unavailable.
   }
+}
+
+function installAudioUnlockListeners(): void {
+  if (audioUnlockListenersInstalled || typeof window === 'undefined') return;
+  audioUnlockListenersInstalled = true;
+
+  const unlock = () => {
+    audioUnlocked = true;
+    void audioContext?.resume();
+  };
+
+  window.addEventListener('pointerdown', unlock, { once: true, passive: true });
+  window.addEventListener('keydown', unlock, { once: true });
+  window.addEventListener('touchstart', unlock, { once: true, passive: true });
 }
 
 function getToneSequence(cue: SfxCue) {

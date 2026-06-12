@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Visitor card placeholder">
-  <rect width="320" height="220" rx="18" fill="#eef2f3"/>
-  <rect x="74" y="48" width="172" height="118" rx="12" fill="#ffffff"/>
-  <rect x="94" y="72" width="56" height="56" rx="8" fill="#82aaa4"/>
-  <path d="M168 84h46M168 112h58M96 146h128" stroke="#8b99a1" stroke-width="8" stroke-linecap="round"/>
-  <path d="M226 50l22 28" stroke="#9b2749" stroke-width="10" stroke-linecap="round"/>
-</svg>
